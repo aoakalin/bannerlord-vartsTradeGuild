@@ -7,7 +7,7 @@ using TaleWorlds.Core;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 
-namespace helloBannerlord
+namespace vartsZombieMod
 {
     public class Main : MBSubModuleBase
     {
