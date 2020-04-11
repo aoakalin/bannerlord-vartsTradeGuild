@@ -46,7 +46,7 @@ namespace vartsTradeGuild.encyclopedia
             {
                 if (IsValidEncyclopediaItem(vartsDto))
                     source.Add(new EncyclopediaListItem(vartsDto, vartsDto.CustomName.ToString(), "",
-                        vartsDto.StringId, "VartsDto"));
+                        vartsDto.StringId, "Settlement"));
             }
 
             _items = source.OrderBy(h => h.Name);

@@ -18,17 +18,18 @@ namespace vartsTradeGuild.encyclopedia.dto
             {
                 var list = new List<TownDto>();
 
-                foreach (var town in Settlement.All)
+                foreach (var settlement in Settlement.All)
                 {
-                    if (!town.IsTown)
+                    if (!settlement.IsTown)
                     {
                         continue;
                     }
 
-                    var tradeBoundVillages = VillageDto.GetByTradeBoundTownName(town.Name);
+                    var tradeBoundVillages = VillageDto.GetByTradeBoundTownName(settlement.Name);
                     var townDto = new TownDto
                     {
-                        TownName = town.Name,
+                        StringId = settlement.StringId,
+                        TownName = settlement.Name,
                         Villages = (MBReadOnlyList<VillageDto>) tradeBoundVillages
                     };
                     var suggestedWorkshops = new HashSet<WorkshopTypeDto>();
@@ -59,7 +60,7 @@ namespace vartsTradeGuild.encyclopedia.dto
                         workshopSuggestionDictionary[key] = value;
                     }
 
-                    var townCustomName = "Town " + town.Name + " (Workshop Suggestion: ";
+                    var townCustomName = "Town " + settlement.Name + " (Workshop Suggestion: ";
                     var commaCounter = 1;
                     foreach (KeyValuePair<string, int> keyValuePair in workshopSuggestionDictionary)
                     {
