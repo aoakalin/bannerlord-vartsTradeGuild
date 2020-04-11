@@ -1,7 +1,5 @@
 # bannerlord-mods
 
-You can find all my Mount & Blade II Bannerlord mods here
-
 Table of Contents:
 
 * helloBannerlord: https://github.com/aoakalin/bannerlord-mods/tree/master/helloBannerlord
