@@ -9,6 +9,3 @@ Table of Contents:
   
 * vartsWorkshopSuggestionMod: https://github.com/aoakalin/bannerlord-mods/tree/master/vartsWorkshopSuggestionMod
   This is my first fully functional mod, it suggests the ideal workshop for the town by checking it's villages
-  
-* vartsZombieInvasionMod: https://github.com/aoakalin/bannerlord-mods/tree/master/vartsZombieMod/vartsZombieInvasionMod
-  This mod will be battle focused, you will defend villages from zombie hordes
