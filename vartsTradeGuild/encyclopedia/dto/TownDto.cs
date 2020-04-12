@@ -8,7 +8,6 @@ namespace vartsTradeGuild.encyclopedia.dto
 {
     public class TownDto : VartsDto
     {
-        public TextObject TownName;
         public MBReadOnlyList<VillageDto> Villages;
         public MBReadOnlyList<WorkshopTypeDto> SuggestedWorkshops;
 
@@ -29,8 +28,9 @@ namespace vartsTradeGuild.encyclopedia.dto
                     var townDto = new TownDto
                     {
                         StringId = settlement.StringId,
-                        TownName = settlement.Name,
-                        Villages = (MBReadOnlyList<VillageDto>) tradeBoundVillages
+                        Name = settlement.Name,
+                        Villages = (MBReadOnlyList<VillageDto>) tradeBoundVillages,
+                        CustomName = new TextObject("this will be changed below, this is a placeholder for debugging")
                     };
                     var suggestedWorkshops = new HashSet<WorkshopTypeDto>();
                     foreach (var villageDto in townDto.Villages)
@@ -48,7 +48,7 @@ namespace vartsTradeGuild.encyclopedia.dto
                     var townDtoSuggestedWorkshops = townDto.SuggestedWorkshops;
                     foreach (var townDtoSuggestedWorkshop in townDtoSuggestedWorkshops)
                     {
-                        var key = townDtoSuggestedWorkshop.WorkshopTypeName.ToString();
+                        var key = townDtoSuggestedWorkshop.CustomName.ToString();
                         var keyExists = workshopSuggestionDictionary.TryGetValue(key, out var value);
                         if (!keyExists)
                         {
@@ -60,7 +60,7 @@ namespace vartsTradeGuild.encyclopedia.dto
                         workshopSuggestionDictionary[key] = value;
                     }
 
-                    var townCustomName = "Town " + settlement.Name + " (Workshop Suggestion: ";
+                    var townCustomName = "T " + settlement.Name + " (";
                     var commaCounter = 1;
                     foreach (KeyValuePair<string, int> keyValuePair in workshopSuggestionDictionary)
                     {
@@ -111,7 +111,7 @@ namespace vartsTradeGuild.encyclopedia.dto
                 {
                     foreach (var townDtoSuggestedWorkshop in townDto.SuggestedWorkshops)
                     {
-                        hashSet.Add(townDtoSuggestedWorkshop.WorkshopTypeName);
+                        hashSet.Add(townDtoSuggestedWorkshop.Name);
                     }
                 }
 

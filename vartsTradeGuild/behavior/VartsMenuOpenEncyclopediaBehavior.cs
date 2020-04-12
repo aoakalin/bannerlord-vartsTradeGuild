@@ -14,6 +14,15 @@ namespace vartsTradeGuild.behavior
         protected override void OnMenuOptionClicked()
         {
             Campaign.Current.EncyclopediaManager.GoToLink("ListPage", "VartsDto");
+
+            //todo debugModeControl
+//            if (true)
+//            {
+//                var workshopTypeDtoDebugData = WorkshopTypeDto.DumpDebugData();
+//                var villageDtoDebugData = VillageDto.DumpDebugData();
+//
+//                InformationManager.DisplayMessage(new InformationMessage(Main.ModName + " debug mode"));
+//            }
         }
     }
 }

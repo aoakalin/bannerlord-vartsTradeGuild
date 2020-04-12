@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Localization;
@@ -6,7 +7,8 @@ namespace vartsTradeGuild.encyclopedia.dto
 {
     public class WorkshopTypeDto
     {
-        public TextObject WorkshopTypeName;
+        public TextObject Name;
+        public TextObject CustomName;
         public List<ProductionDto> Productions;
 
         public static IEnumerable<WorkshopTypeDto> AllWorkshopTypeDto
@@ -24,7 +26,8 @@ namespace vartsTradeGuild.encyclopedia.dto
 
                     var workshopTypeDto = new WorkshopTypeDto
                     {
-                        WorkshopTypeName = workshopType.Name,
+                        Name = workshopType.Name,
+                        CustomName = new TextObject(workshopType.Name.ToString().Replace(" ", "")),
                         Productions = new List<ProductionDto>()
                     };
 
@@ -58,6 +61,28 @@ namespace vartsTradeGuild.encyclopedia.dto
 
         public static IEnumerable<WorkshopTypeDto> GetByInput(TextObject input)
         {
+            switch (input.ToLower().ToString())
+            {
+                case "sheep":
+                    input = new TextObject("wool");
+                    break;
+                case "cow":
+                    input = new TextObject("hides");
+                    break;
+                case "hog":
+                    input = new TextObject("hides");
+                    break;
+                case "grapes":
+                    input = new TextObject("grape");
+                    break;
+                case "iron ore":
+                    input = new TextObject("iron");
+                    break;
+                case "silver ore":
+                    input = new TextObject("silver");
+                    break;
+            }
+
             var list = new HashSet<WorkshopTypeDto>();
             foreach (var workshopTypeDto in AllWorkshopTypeDto)
             {
@@ -74,6 +99,38 @@ namespace vartsTradeGuild.encyclopedia.dto
             }
 
             return list;
+        }
+
+        public static string DumpDebugData()
+        {
+            var result = "";
+            foreach (var workshopTypeDto in AllWorkshopTypeDto)
+            {
+                result += Environment.NewLine;
+                result += workshopTypeDto.CustomName;
+                foreach (var productionDto in workshopTypeDto.Productions)
+                {
+                    result += Environment.NewLine;
+                    result += "\t" + "Production:";
+                    result += Environment.NewLine;
+                    result += "\t\t" + "Inputs: ";
+                    foreach (var productionDtoInput in productionDto.Inputs)
+                    {
+                        result += Environment.NewLine;
+                        result += "\t\t\t" + productionDtoInput;
+                    }
+
+                    result += Environment.NewLine;
+                    result += "\t\t" + "Outputs: ";
+                    foreach (var productionDtoOutput in productionDto.Outputs)
+                    {
+                        result += Environment.NewLine;
+                        result += "\t\t\t" + productionDtoOutput;
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }

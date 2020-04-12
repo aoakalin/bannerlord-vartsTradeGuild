@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TaleWorlds.CampaignSystem;
@@ -30,9 +31,9 @@ namespace vartsTradeGuild.encyclopedia.dto
                         Name = settlement.Name,
                         TradeBoundTownName = settlement.Village.TradeBound.GetName(),
                         PrimaryProduction = settlement.Village.VillageType.PrimaryProduction.Name,
-                        CustomName = new TextObject("Village " + settlement.Name + " (Primary Production: " +
+                        CustomName = new TextObject("V " + settlement.Name + " (P: " +
                                                     settlement.Village.VillageType.PrimaryProduction.Name +
-                                                    " | Trade Bound Town: " + settlement.Village.TradeBound.GetName() +
+                                                    " | T: " + settlement.Village.TradeBound.GetName() +
                                                     ")")
                     };
                     list.Add(villageDto);
@@ -102,6 +103,18 @@ namespace vartsTradeGuild.encyclopedia.dto
         protected override TextObject VartsDtoType()
         {
             return new TextObject("Village");
+        }
+
+        public static string DumpDebugData()
+        {
+            var result = "";
+            foreach (var villageDto in AllVillageDto)
+            {
+                result += Environment.NewLine;
+                result += villageDto.Name + ": " + villageDto.PrimaryProduction;
+            }
+
+            return result;
         }
     }
 }

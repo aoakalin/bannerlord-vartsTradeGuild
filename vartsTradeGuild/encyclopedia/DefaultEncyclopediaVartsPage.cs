@@ -50,7 +50,7 @@ namespace vartsTradeGuild.encyclopedia
             }
 
             _items = source.OrderBy(h => h.Name);
-            
+
             var filtersVartsDtoType = new List<EncyclopediaFilterItem>();
             foreach (var textObject in VartsDto.DistinctType)
             {
@@ -62,11 +62,12 @@ namespace vartsTradeGuild.encyclopedia
                     }
 
                     return false;
-                }));   
+                }));
             }
-            encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVartsDtoType, new TextObject("Settlement Type")));
 
-            
+            encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVartsDtoType,
+                new TextObject("Settlement Type")));
+
             var filtersTownSuggestedWorkshopTypes = new List<EncyclopediaFilterItem>();
             foreach (var textObject in TownDto.DistinctSuggestedWorkshops)
             {
@@ -76,7 +77,7 @@ namespace vartsTradeGuild.encyclopedia
                     {
                         foreach (var dtoSuggestedWorkshop in dto.SuggestedWorkshops)
                         {
-                            if (dtoSuggestedWorkshop.WorkshopTypeName.ToLower().ToString()
+                            if (dtoSuggestedWorkshop.Name.ToLower().ToString()
                                 .Equals(textObject.ToLower().ToString()))
                             {
                                 return true;
@@ -87,7 +88,33 @@ namespace vartsTradeGuild.encyclopedia
                     return false;
                 }));
             }
-            encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersTownSuggestedWorkshopTypes, new TextObject("Workshop Suggestion")));
+
+            encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersTownSuggestedWorkshopTypes,
+                new TextObject("Workshop Suggestion")));
+
+            var filtersTownSuggestedWorkshopStrength = new List<EncyclopediaFilterItem>
+            {
+                new EncyclopediaFilterItem(new TextObject("(+)"), o =>
+                {
+                    if (o is TownDto dto)
+                    {
+                        return dto.CustomName.Contains("(+)");
+                    }
+
+                    return false;
+                }),
+                new EncyclopediaFilterItem(new TextObject("(++)"), o =>
+                {
+                    if (o is TownDto dto)
+                    {
+                        return dto.CustomName.Contains("(++)");
+                    }
+
+                    return false;
+                })
+            };
+            encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersTownSuggestedWorkshopStrength,
+                new TextObject("Suggestion Strength")));
 
             var filtersVillagePrimaryProduction = new List<EncyclopediaFilterItem>();
             foreach (var textObject in VillageDto.DistinctPrimaryProduction)
@@ -102,7 +129,9 @@ namespace vartsTradeGuild.encyclopedia
                     return false;
                 }));
             }
-            encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVillagePrimaryProduction, new TextObject("Village Production")));
+
+            encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVillagePrimaryProduction,
+                new TextObject("Village Production")));
 
             var filtersVillageTradeBoundTownName = new List<EncyclopediaFilterItem>();
             foreach (var textObject in VillageDto.DistinctTradeBoundTownName)
@@ -117,7 +146,9 @@ namespace vartsTradeGuild.encyclopedia
                     return false;
                 }));
             }
-            encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVillageTradeBoundTownName, new TextObject("Village Bound Town")));
+
+            encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVillageTradeBoundTownName,
+                new TextObject("Village Bound Town")));
 
             _filters = encyclopediaFilterGroupList;
         }
