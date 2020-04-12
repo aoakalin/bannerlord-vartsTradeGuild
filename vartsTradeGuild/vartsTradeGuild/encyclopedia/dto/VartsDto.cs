@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
-using TaleWorlds.SaveSystem;
 
 namespace vartsTradeGuild.encyclopedia.dto
 {
@@ -17,8 +15,8 @@ namespace vartsTradeGuild.encyclopedia.dto
 
         protected abstract TextObject VartsDtoType();
 
-        private static List<VartsDto> _all = new List<VartsDto>();
-        public static MBReadOnlyList<VartsDto> All => new MBReadOnlyList<VartsDto>(_all);
+        private static HashSet<VartsDto> _all = new HashSet<VartsDto>();
+        public static MBReadOnlyList<VartsDto> All => new MBReadOnlyList<VartsDto>(_all.ToList());
 
         public static MBReadOnlyList<TextObject> DistinctType
         {
