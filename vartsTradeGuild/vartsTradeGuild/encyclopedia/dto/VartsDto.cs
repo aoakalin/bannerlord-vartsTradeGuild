@@ -15,8 +15,8 @@ namespace vartsTradeGuild.encyclopedia.dto
 
         protected abstract TextObject VartsDtoType();
 
-        private static HashSet<VartsDto> _all = new HashSet<VartsDto>();
-        public static MBReadOnlyList<VartsDto> All => new MBReadOnlyList<VartsDto>(_all.ToList());
+        private static HashSet<VartsDto> _all;
+        public static MBReadOnlyList<VartsDto> All;
 
         public static MBReadOnlyList<TextObject> DistinctType
         {
@@ -32,22 +32,19 @@ namespace vartsTradeGuild.encyclopedia.dto
             }
         }
 
-        public static void Add(VartsDto vartsDto)
-        {
-            _all.Add(vartsDto);
-        }
-
         public static void InitializeVartsDto()
         {
+            _all = new HashSet<VartsDto>();
             foreach (var villageDto in VillageDto.AllVillageDto)
             {
-                Add(villageDto);
+                _all.Add(villageDto);
             }
 
             foreach (var townDto in TownDto.AllTownDto)
             {
-                Add(townDto);
+                _all.Add(townDto);
             }
+            All = new MBReadOnlyList<VartsDto>(_all.ToList());
         }
     }
 }
