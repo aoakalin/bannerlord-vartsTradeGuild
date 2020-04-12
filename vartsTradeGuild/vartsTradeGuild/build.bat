@@ -38,9 +38,12 @@ powershell -Command "(gc SubModule.xml) -replace 'MOD_ID', '!modId!' | Out-File 
 powershell -Command "(gc SubModule.xml) -replace 'MOD_NAME', '!modName!' | Out-File SubModule.xml"
 powershell -Command "(gc SubModule.xml) -replace 'MOD_VERSION', '%1%' | Out-File SubModule.xml"
 
-cd ..
+cd !outDir!
+mkdir Modules
+cd Modules
+mkdir !modId!
+cd !modId!
+xcopy "!modPath!" "%cd%" /E /I
 
-"!sevenZip!" a -r !modId!_!modVersion!.zip ./!modId!/*
-
-xcopy !modId!_!modVersion!.zip "!outDir!\"
-del /q !modId!_!modVersion!.zip >nul 2>&1
+cd !outDir!
+"!sevenZip!" a -r !modId!_!modVersion!.zip Modules
