@@ -33,7 +33,7 @@ namespace vartsTradeGuild
         protected override void OnSubModuleUnloaded()
         {
             base.OnSubModuleUnloaded();
-            harmony.UnpatchAll();
+            harmony.UnpatchAll(nameof(vartsTradeGuild));
         }
         
         protected override void OnGameStart(Game game, IGameStarter gameStarterObject)
