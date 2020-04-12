@@ -1,11 +1,12 @@
 using TaleWorlds.CampaignSystem.GameMenus;
 using vartsTradeGuild.behavior.@base;
+using vartsTradeGuild.localization;
 
 namespace vartsTradeGuild.behavior
 {
     public class TownOpenVartsMenuBehavior : VartsMenuOptionBehaviorBase
     {
-        public TownOpenVartsMenuBehavior() : base("town", Main.ModId, "Visit VARTS Trade Guild",
+        public TownOpenVartsMenuBehavior() : base("town", Main.ModId, LocalizationManager.TownMainMenuOption,
             GameMenuOption.LeaveType.Trade, false)
         {
         }

@@ -78,6 +78,7 @@
     <Compile Include="encyclopedia\dto\VillageDto.cs" />
     <Compile Include="encyclopedia\dto\WorkshopTypeDto.cs" />
     <Compile Include="harmony\EncyclopediaPatch.cs" />
+    <Compile Include="localization\LocalizationManager.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -29,6 +29,7 @@ xcopy "!outDir!\*!modId!*" "!modPath!\bin\Win64_Shipping_Client\"
 del /s /q "!outDir!\*" >nul 2>&1
 
 xcopy "%cd%\Modules\!modId!\GUI" "!modPath!\GUI" /E /I
+xcopy "%cd%\Modules\!modId!\ModuleData" "!modPath!\ModuleData" /E /I
 
 xcopy "%cd%\Modules\!modId!\SubModule.xml" "!modPath!\SubModule.xml*"
 

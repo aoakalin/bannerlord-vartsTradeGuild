@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="English" />
+  </tags>
+  <strings>
+    <string id="vartsTradeGuild_ModName" text="VARTS Trade Guild" />
+    <string id="vartsTradeGuild_ModLoadedInformation" text="VARTS Trade Guild loaded" />
+    <string id="vartsTradeGuild_TownMainMenuOption" text="Visit VARTS Trade Guild" />
+    <string id="vartsTradeGuild_TownMainMenuText" text="VARTS Trade Guild Agent: Welcome, my friend. I can answer all your trade related questions." />
+    <string id="vartsTradeGuild_MainMenuLeaveOption" text="I will come back another time." />
+    <string id="vartsTradeGuild_MainMenuOpenEncyclopediaOption" text="I have a question..." />
+    <string id="vartsTradeGuild_EncyclopediaDefaultVartsPageName" text="VARTS" />
+    <string id="vartsTradeGuild_EncyclopediaDefaultVartsPageDescription" text="VARTS Trade Guild can answer all your trade related questions." />
+    <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterSettlementType" text="Settlement Type" />
+    <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterWorkshopSuggestion" text="Workshop Suggestion" />
+    <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterSuggestionStrength" text="Suggestion Strength" />
+    <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterVillageProduction" text="Village Production" />
+    <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterVillageBoundTown" text="Village Bound Town" />
+  </strings>
+</base>

@@ -1,13 +1,14 @@
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.GameMenus;
 using vartsTradeGuild.behavior.@base;
+using vartsTradeGuild.localization;
 
 namespace vartsTradeGuild.behavior
 {
     public class VartsMenuLeaveBehavior : VartsMenuOptionBehaviorBase
     {
         public VartsMenuLeaveBehavior() : base(Main.ModId, "Leave",
-            "I will come back another time.", GameMenuOption.LeaveType.Leave, true)
+            LocalizationManager.MainMenuLeaveOption, GameMenuOption.LeaveType.Leave, true)
         {
         }
 

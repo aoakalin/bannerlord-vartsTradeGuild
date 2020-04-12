@@ -3,6 +3,7 @@ using System.Linq;
 using TaleWorlds.CampaignSystem.Encyclopedia;
 using TaleWorlds.Localization;
 using vartsTradeGuild.encyclopedia.dto;
+using vartsTradeGuild.localization;
 
 namespace vartsTradeGuild.encyclopedia
 {
@@ -16,17 +17,17 @@ namespace vartsTradeGuild.encyclopedia
 
         public override TextObject GetName()
         {
-            return new TextObject(Main.ModName);
+            return new TextObject(LocalizationManager.EncyclopediaDefaultVartsPageName);
         }
 
         public override TextObject GetDescriptionText()
         {
-            return new TextObject(Main.ModDescription);
+            return new TextObject(LocalizationManager.EncyclopediaDefaultVartsPageDescription);
         }
 
         public override string GetImageID()
         {
-            return Main.ModImageID;
+            return "EncyclopediaSettlement";
         }
 
         public sealed override bool IsValidEncyclopediaItem(object o)
@@ -66,7 +67,7 @@ namespace vartsTradeGuild.encyclopedia
             }
 
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVartsDtoType,
-                new TextObject("Settlement Type")));
+                new TextObject(LocalizationManager.EncyclopediaVartsDtoFilterSettlementType)));
 
             var filtersTownSuggestedWorkshopTypes = new List<EncyclopediaFilterItem>();
             foreach (var textObject in TownDto.DistinctSuggestedWorkshops)
@@ -90,7 +91,7 @@ namespace vartsTradeGuild.encyclopedia
             }
 
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersTownSuggestedWorkshopTypes,
-                new TextObject("Workshop Suggestion")));
+                new TextObject(LocalizationManager.EncyclopediaVartsDtoFilterWorkshopSuggestion)));
 
             var filtersTownSuggestedWorkshopStrength = new List<EncyclopediaFilterItem>
             {
@@ -114,7 +115,7 @@ namespace vartsTradeGuild.encyclopedia
                 })
             };
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersTownSuggestedWorkshopStrength,
-                new TextObject("Suggestion Strength")));
+                new TextObject(LocalizationManager.EncyclopediaVartsDtoFilterSuggestionStrength)));
 
             var filtersVillagePrimaryProduction = new List<EncyclopediaFilterItem>();
             foreach (var textObject in VillageDto.DistinctPrimaryProduction)
@@ -131,7 +132,7 @@ namespace vartsTradeGuild.encyclopedia
             }
 
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVillagePrimaryProduction,
-                new TextObject("Village Production")));
+                new TextObject(LocalizationManager.EncyclopediaVartsDtoFilterVillageProduction)));
 
             var filtersVillageTradeBoundTownName = new List<EncyclopediaFilterItem>();
             foreach (var textObject in VillageDto.DistinctTradeBoundTownName)
@@ -148,7 +149,7 @@ namespace vartsTradeGuild.encyclopedia
             }
 
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVillageTradeBoundTownName,
-                new TextObject("Village Bound Town")));
+                new TextObject(LocalizationManager.EncyclopediaVartsDtoFilterVillageBoundTown)));
 
             _filters = encyclopediaFilterGroupList;
         }
