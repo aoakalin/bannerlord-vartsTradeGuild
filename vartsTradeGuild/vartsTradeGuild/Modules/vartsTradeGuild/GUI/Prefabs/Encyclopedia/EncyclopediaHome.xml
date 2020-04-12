@@ -1,0 +1,42 @@
+<Prefab>
+  <Constants>
+    <Constant Name="Search.Popup.MarginLeft" Value="221"/>
+    <Constant Name="Search.Popup.MarginRight" Value="221"/>
+    <Constant Name="Search.Popup.MarginBottom" Value="83" />
+    <Constant Name="Search.Popup.MarginTop" Value="66" Additive="150"/>
+
+    <Constant Name="Encyclopedia.Canvas.Width" BrushName="Encyclopedia.Canvas" BrushLayer="Default" BrushValueType="Width"/>
+    <Constant Name="Encyclopedia.Canvas.Height" BrushName="Encyclopedia.Canvas" BrushLayer="Default" BrushValueType="Height"/>
+
+    <Constant Name="Encyclopedia.Width" Value="!Encyclopedia.Canvas.Width" Additive="-35"/>
+    <Constant Name="Encyclopedia.Height" Value="!Encyclopedia.Canvas.Height" Additive="-198" />
+
+  </Constants>
+  <Window>
+    <Widget HeightSizePolicy ="StretchToParent" WidthSizePolicy="StretchToParent" DoNotAcceptEvents="true" Brush="Encyclopedia.Page.SoundBrush">
+      <Children>
+
+        <Widget HeightSizePolicy ="Fixed" WidthSizePolicy="Fixed" SuggestedHeight="!Encyclopedia.Height" SuggestedWidth="!Encyclopedia.Width" HorizontalAlignment="Center" VerticalAlignment="Top" MarginTop="200" MarginBottom="117" DoNotAcceptEvents="true">
+          <Children>
+
+            <ListPanel DataSource="{Lists}" WidthSizePolicy = "StretchToParent" HeightSizePolicy = "CoverChildren" MarginLeft="15" HorizontalAlignment="Left" VerticalAlignment="Center">
+              <ItemTemplate>
+
+<ButtonWidget Command.Click="Execute" DoNotPassEventsToChildren="true" HeightSizePolicy ="Fixed" WidthSizePolicy="Fixed" SuggestedHeight="445" SuggestedWidth="197" VerticalAlignment="Center" HorizontalAlignment="Center" Brush="@ImageID" MarginRight="11">
+                  <Children>
+                    <TextWidget HeightSizePolicy ="Fixed" WidthSizePolicy="StretchToParent" SuggestedHeight="80" VerticalAlignment="Top" Text="@Name" Brush="EncyclopediaHome.Type.Text">
+                    </TextWidget>
+                  </Children>
+                </ButtonWidget>
+
+              </ItemTemplate>
+            </ListPanel>
+
+
+          </Children>
+        </Widget>
+
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>
