@@ -35,6 +35,9 @@
       <HintPath>packages\Lib.Harmony.2.0.0.9\lib\net472\0Harmony.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SandBox.View, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\SandBox\bin\Win64_Shipping_Client\SandBox.View.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
@@ -47,8 +50,20 @@
     <Reference Include="TaleWorlds.CampaignSystem">
       <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.CampaignSystem.dll</HintPath>
     </Reference>
+    <Reference Include="TaleWorlds.CampaignSystem.ViewModelCollection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.CampaignSystem.ViewModelCollection.dll</HintPath>
+    </Reference>
     <Reference Include="TaleWorlds.Core">
       <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="TaleWorlds.Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="TaleWorlds.Engine.GauntletUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Engine.GauntletUI.dll</HintPath>
+    </Reference>
+    <Reference Include="TaleWorlds.GauntletUI.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.GauntletUI.Data.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.InputSystem">
       <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.InputSystem.dll</HintPath>
@@ -62,6 +77,12 @@
     <Reference Include="TaleWorlds.MountAndBlade, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.dll</HintPath>
     </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.View, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\Native\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.View.dll</HintPath>
+    </Reference>
+    <Reference Include="TaleWorlds.PlayerServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.PlayerServices.dll</HintPath>
+    </Reference>
     <Reference Include="TaleWorlds.SaveSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.SaveSystem.dll</HintPath>
     </Reference>
@@ -71,13 +92,25 @@
     <Compile Include="behavior\TownOpenVartsMenuBehavior.cs" />
     <Compile Include="behavior\VartsMenuLeaveBehavior.cs" />
     <Compile Include="behavior\VartsMenuOpenEncyclopediaBehavior.cs" />
+    <Compile Include="behavior\VartsMenuOpenLeaderboardHeroBehavior.cs" />
+    <Compile Include="behavior\VartsMenuOpenLeaderboardWorkshopBehavior.cs" />
     <Compile Include="encyclopedia\DefaultEncyclopediaVartsPage.cs" />
+    <Compile Include="encyclopedia\dto\HeroDto.cs" />
     <Compile Include="encyclopedia\dto\ProductionDto.cs" />
     <Compile Include="encyclopedia\dto\TownDto.cs" />
     <Compile Include="encyclopedia\dto\VartsDto.cs" />
     <Compile Include="encyclopedia\dto\VillageDto.cs" />
+    <Compile Include="encyclopedia\dto\WorkshopDto.cs" />
     <Compile Include="encyclopedia\dto\WorkshopTypeDto.cs" />
-    <Compile Include="harmony\EncyclopediaPatch.cs" />
+    <Compile Include="harmony\EncyclopediaManagerCreateEncyclopediaPagesPatch.cs" />
+    <Compile Include="harmony\MenuContextOpenTournamentLeaderboardsPatch.cs" />
+    <Compile Include="leaderboard\GauntletMenuLeaderboardHero.cs" />
+    <Compile Include="leaderboard\GauntletMenuLeaderboardWorkshop.cs" />
+    <Compile Include="leaderboard\vm\LeaderboardWorkshopSortControllerVM.cs" />
+    <Compile Include="leaderboard\vm\LeaderboardWorkshopVM.cs" />
+    <Compile Include="leaderboard\vm\LeaderboardWorkshopEntryItemVM.cs" />
+    <Compile Include="leaderboard\vm\VartsHeroVM.cs" />
+    <Compile Include="leaderboard\vm\VartsImageIdentifierVM.cs" />
     <Compile Include="localization\LocalizationManager.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

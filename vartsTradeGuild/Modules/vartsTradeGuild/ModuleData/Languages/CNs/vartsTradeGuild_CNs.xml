@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-16"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+    <tags>
+        <tag language="简体中文" />
+    </tags>
+    <strings>
+        <string id="vartsTradeGuild_ModName" text="VARTS贸易协会" />
+        <string id="vartsTradeGuild_ModLoadedInformation" text="VARTS贸易协会已载入" />
+        <string id="vartsTradeGuild_TownMainMenuOption" text="访问 VARTS 贸易协会" />
+        <string id="vartsTradeGuild_TownMainMenuText" text="VARTS贸易协会经理人：欢迎，我的朋友。我可以回答您所有与贸易有关的问题。" />
+        <string id="vartsTradeGuild_MainMenuLeaveOption" text="下次一定" />
+        <string id="vartsTradeGuild_MainMenuOpenEncyclopediaOption" text="我有一个问题..." />
+        <string id="vartsTradeGuild_MainMenuOpenLeaderboardHeroOption" text="关于最富有的人..." />
+        <string id="vartsTradeGuild_MainMenuOpenLeaderboardWorkshopOption" text="趋势业务是..." />
+        <string id="vartsTradeGuild_EncyclopediaDefaultVartsPageName" text="VARTS" />
+        <string id="vartsTradeGuild_EncyclopediaDefaultVartsPageDescription" text="VARTS贸易协会可以回答您所有与贸易有关的问题。" />
+        <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterSettlementType" text="定居点类型" />
+        <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterWorkshopSuggestion" text="工坊建议" />
+        <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterSuggestionStrength" text="建议强度：" />
+        <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterVillageProduction" text="村庄生产" />
+        <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterVillageBoundTown" text="城镇下属村庄" />
+    </strings>
+</base>

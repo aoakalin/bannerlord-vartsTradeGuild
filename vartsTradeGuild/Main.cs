@@ -37,18 +37,20 @@ namespace vartsTradeGuild
 
             Game.Current.ObjectManager.RegisterNonSerializedType<VartsDto>("VartsDto", "VartsDtoList");
 
-            ((CampaignGameStarter) gameStarterObject).AddGameMenu(ModId, LocalizationManager.TownMainMenuText, ModMenuInitDelegate);
+            ((CampaignGameStarter) gameStarterObject).AddGameMenu(ModId, LocalizationManager.TownMainMenuText.ToString(), ModMenuInitDelegate);
             ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenEncyclopediaBehavior());
+            ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenLeaderboardHeroBehavior());
+            ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenLeaderboardWorkshopBehavior());
             ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuLeaveBehavior());
 
             ((CampaignGameStarter) gameStarterObject).AddBehavior(new TownOpenVartsMenuBehavior());
 
-            InformationManager.DisplayMessage(new InformationMessage(LocalizationManager.ModLoadedInformation));
+            InformationManager.DisplayMessage(new InformationMessage(LocalizationManager.ModLoadedInformation.ToString()));
         }
 
         private static void ModMenuInitDelegate(MenuCallbackArgs args)
         {
-            args.MenuTitle = new TextObject(LocalizationManager.ModName);
+            args.MenuTitle = LocalizationManager.ModName;
         }
     }
 }

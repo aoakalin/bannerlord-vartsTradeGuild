@@ -4,6 +4,7 @@ using System.Linq;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
+using vartsTradeGuild.localization;
 
 namespace vartsTradeGuild.encyclopedia.dto
 {
@@ -102,7 +103,7 @@ namespace vartsTradeGuild.encyclopedia.dto
 
         protected override TextObject VartsDtoType()
         {
-            return new TextObject("Village");
+            return LocalizationManager.Village;
         }
 
         public static string DumpDebugData()

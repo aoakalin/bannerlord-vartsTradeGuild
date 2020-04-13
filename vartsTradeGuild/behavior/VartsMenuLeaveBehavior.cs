@@ -8,11 +8,11 @@ namespace vartsTradeGuild.behavior
     public class VartsMenuLeaveBehavior : VartsMenuOptionBehaviorBase
     {
         public VartsMenuLeaveBehavior() : base(Main.ModId, "Leave",
-            LocalizationManager.MainMenuLeaveOption, GameMenuOption.LeaveType.Leave, true)
+            LocalizationManager.MainMenuLeaveOption.ToString(), GameMenuOption.LeaveType.Leave, true)
         {
         }
 
-        protected override void OnMenuOptionClicked()
+        protected override void OnMenuOptionClicked(MenuCallbackArgs args)
         {
             PlayerEncounter.LeaveSettlement();
             PlayerEncounter.Finish();

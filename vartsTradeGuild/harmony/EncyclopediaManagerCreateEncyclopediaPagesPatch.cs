@@ -9,7 +9,7 @@ using vartsTradeGuild.encyclopedia.dto;
 namespace vartsTradeGuild.harmony
 {
     [HarmonyPatch(typeof(EncyclopediaManager), "CreateEncyclopediaPages")]
-    public class EncyclopediaPatch
+    public class EncyclopediaManagerCreateEncyclopediaPagesPatch
     {
         private static void Postfix(EncyclopediaManager __instance)
         {

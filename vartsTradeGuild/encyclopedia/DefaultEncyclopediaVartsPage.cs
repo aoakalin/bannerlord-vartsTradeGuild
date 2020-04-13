@@ -17,12 +17,12 @@ namespace vartsTradeGuild.encyclopedia
 
         public override TextObject GetName()
         {
-            return new TextObject(LocalizationManager.EncyclopediaDefaultVartsPageName);
+            return LocalizationManager.EncyclopediaDefaultVartsPageName;
         }
 
         public override TextObject GetDescriptionText()
         {
-            return new TextObject(LocalizationManager.EncyclopediaDefaultVartsPageDescription);
+            return LocalizationManager.EncyclopediaDefaultVartsPageDescription;
         }
 
         public override string GetImageID()
@@ -67,7 +67,7 @@ namespace vartsTradeGuild.encyclopedia
             }
 
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVartsDtoType,
-                new TextObject(LocalizationManager.EncyclopediaVartsDtoFilterSettlementType)));
+                LocalizationManager.EncyclopediaVartsDtoFilterSettlementType));
 
             var filtersTownSuggestedWorkshopTypes = new List<EncyclopediaFilterItem>();
             foreach (var textObject in TownDto.DistinctSuggestedWorkshops)
@@ -91,7 +91,7 @@ namespace vartsTradeGuild.encyclopedia
             }
 
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersTownSuggestedWorkshopTypes,
-                new TextObject(LocalizationManager.EncyclopediaVartsDtoFilterWorkshopSuggestion)));
+                LocalizationManager.EncyclopediaVartsDtoFilterWorkshopSuggestion));
 
             var filtersTownSuggestedWorkshopStrength = new List<EncyclopediaFilterItem>
             {
@@ -115,7 +115,7 @@ namespace vartsTradeGuild.encyclopedia
                 })
             };
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersTownSuggestedWorkshopStrength,
-                new TextObject(LocalizationManager.EncyclopediaVartsDtoFilterSuggestionStrength)));
+                LocalizationManager.EncyclopediaVartsDtoFilterSuggestionStrength));
 
             var filtersVillagePrimaryProduction = new List<EncyclopediaFilterItem>();
             foreach (var textObject in VillageDto.DistinctPrimaryProduction)
@@ -132,7 +132,7 @@ namespace vartsTradeGuild.encyclopedia
             }
 
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVillagePrimaryProduction,
-                new TextObject(LocalizationManager.EncyclopediaVartsDtoFilterVillageProduction)));
+                LocalizationManager.EncyclopediaVartsDtoFilterVillageProduction));
 
             var filtersVillageTradeBoundTownName = new List<EncyclopediaFilterItem>();
             foreach (var textObject in VillageDto.DistinctTradeBoundTownName)
@@ -149,7 +149,7 @@ namespace vartsTradeGuild.encyclopedia
             }
 
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVillageTradeBoundTownName,
-                new TextObject(LocalizationManager.EncyclopediaVartsDtoFilterVillageBoundTown)));
+                LocalizationManager.EncyclopediaVartsDtoFilterVillageBoundTown));
 
             _filters = encyclopediaFilterGroupList;
         }

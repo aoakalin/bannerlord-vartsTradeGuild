@@ -9,7 +9,9 @@
     <string id="vartsTradeGuild_TownMainMenuOption" text="Visit VARTS Trade Guild" />
     <string id="vartsTradeGuild_TownMainMenuText" text="VARTS Trade Guild Agent: Welcome, my friend. I can answer all your trade related questions." />
     <string id="vartsTradeGuild_MainMenuLeaveOption" text="I will come back another time." />
-    <string id="vartsTradeGuild_MainMenuOpenEncyclopediaOption" text="I have a question..." />
+    <string id="vartsTradeGuild_MainMenuOpenEncyclopediaOption" text="Let's talk about workshops..." />
+    <string id="vartsTradeGuild_MainMenuOpenLeaderboardHeroOption" text="About the richest people..." />
+    <string id="vartsTradeGuild_MainMenuOpenLeaderboardWorkshopOption" text="The trending businesses are..." />
     <string id="vartsTradeGuild_EncyclopediaDefaultVartsPageName" text="VARTS" />
     <string id="vartsTradeGuild_EncyclopediaDefaultVartsPageDescription" text="VARTS Trade Guild can answer all your trade related questions." />
     <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterSettlementType" text="Settlement Type" />

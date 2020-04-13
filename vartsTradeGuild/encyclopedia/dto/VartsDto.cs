@@ -3,6 +3,7 @@ using System.Linq;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
+using TaleWorlds.MountAndBlade;
 
 namespace vartsTradeGuild.encyclopedia.dto
 {
@@ -18,14 +19,16 @@ namespace vartsTradeGuild.encyclopedia.dto
         private static HashSet<VartsDto> _all;
         public static MBReadOnlyList<VartsDto> All;
 
-        public static MBReadOnlyList<TextObject> DistinctType
+        public static IEnumerable<TextObject> DistinctType
         {
             get
             {
                 var hashSet = new HashSet<string>();
                 foreach (var vartsDto in All)
                 {
-                    hashSet.Add(vartsDto.Type.ToString());
+                    hashSet.Add(
+                        LocalizedTextManager.GetTranslatedText(BannerlordConfig.Language, vartsDto.Type.GetID())
+                    );
                 }
 
                 return new MBReadOnlyList<TextObject>(hashSet.ToList().ConvertAll(s => new TextObject(s)));
@@ -44,6 +47,7 @@ namespace vartsTradeGuild.encyclopedia.dto
             {
                 _all.Add(townDto);
             }
+
             All = new MBReadOnlyList<VartsDto>(_all.ToList());
         }
     }

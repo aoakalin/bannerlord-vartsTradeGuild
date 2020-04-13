@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="Türkçe" />
+  </tags>
+  <strings>
+    <string id="vartsTradeGuild_ModName" text="VARTS Ticaret Loncası" />
+    <string id="vartsTradeGuild_ModLoadedInformation" text="VARTS Ticaret Loncası yüklendi" />
+    <string id="vartsTradeGuild_TownMainMenuOption" text="VARTS Ticaret Loncası'nı ziyaret et" />
+    <string id="vartsTradeGuild_TownMainMenuText" text="VARTS Ticaret Loncası Temsilcisi: Hoşgeldin, dostum. Ticaret ile ilgili bütün sorularını cevaplayabilirim." />
+    <string id="vartsTradeGuild_MainMenuLeaveOption" text="Daha sonra geri geleceğim." />
+    <string id="vartsTradeGuild_MainMenuOpenEncyclopediaOption" text="Atölyeler hakkında konuşalım..." />
+    <string id="vartsTradeGuild_MainMenuOpenLeaderboardHeroOption" text="En zengin insanlar hakkında..." />
+    <string id="vartsTradeGuild_MainMenuOpenLeaderboardWorkshopOption" text="Trend olan işletmeler..." />
+    <string id="vartsTradeGuild_EncyclopediaDefaultVartsPageName" text="VARTS" />
+    <string id="vartsTradeGuild_EncyclopediaDefaultVartsPageDescription" text="VARTS Ticaret Loncası ticaret ile ilgili bütün sorularınızı cevaplayabilir." />
+    <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterSettlementType" text="Yerleşke Tipi" />
+    <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterWorkshopSuggestion" text="Atölye Önerisi" />
+    <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterSuggestionStrength" text="Öneri Kuvveti" />
+    <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterVillageProduction" text="Köy Üretimi" />
+    <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterVillageBoundTown" text="Köy Bağlı Şehri" />
+  </strings>
+</base>

@@ -8,11 +8,11 @@ namespace vartsTradeGuild.behavior
     public class VartsMenuOpenEncyclopediaBehavior : VartsMenuOptionBehaviorBase
     {
         public VartsMenuOpenEncyclopediaBehavior() : base(Main.ModId, "OpenEncyclopedia",
-            LocalizationManager.MainMenuOpenEncyclopediaOption, GameMenuOption.LeaveType.Trade, false)
+            LocalizationManager.MainMenuOpenEncyclopediaOption.ToString(), GameMenuOption.LeaveType.Trade, false)
         {
         }
 
-        protected override void OnMenuOptionClicked()
+        protected override void OnMenuOptionClicked(MenuCallbackArgs args)
         {
             Campaign.Current.EncyclopediaManager.GoToLink("ListPage", "VartsDto");
 

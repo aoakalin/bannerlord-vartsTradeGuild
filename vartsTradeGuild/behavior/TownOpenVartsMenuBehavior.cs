@@ -6,12 +6,12 @@ namespace vartsTradeGuild.behavior
 {
     public class TownOpenVartsMenuBehavior : VartsMenuOptionBehaviorBase
     {
-        public TownOpenVartsMenuBehavior() : base("town", Main.ModId, LocalizationManager.TownMainMenuOption,
+        public TownOpenVartsMenuBehavior() : base("town", Main.ModId, LocalizationManager.TownMainMenuOption.ToString(),
             GameMenuOption.LeaveType.Trade, false)
         {
         }
 
-        protected override void OnMenuOptionClicked()
+        protected override void OnMenuOptionClicked(MenuCallbackArgs args)
         {
             GameMenu.ActivateGameMenu(Main.ModId);
         }

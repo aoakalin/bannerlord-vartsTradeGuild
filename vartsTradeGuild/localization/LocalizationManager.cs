@@ -1,28 +1,44 @@
 using TaleWorlds.Localization;
+using TaleWorlds.MountAndBlade;
 
 namespace vartsTradeGuild.localization
 {
     public static class LocalizationManager
     {
-        private const string CurrentLanguage = LocalizedTextManager.DefaultEnglishLanguageId;
-
-        private static string Translated(string id)
+        private static TextObject Translate(string id, bool isFullId = false)
         {
-            return LocalizedTextManager.GetTranslatedText(CurrentLanguage, Main.ModId + "_" + id);
-        }
+            TextObject translatedText; 
+            if (!isFullId)
+            {
+                var fullId = Main.ModId + "_" + id;
+                translatedText = new TextObject(LocalizedTextManager.GetTranslatedText(BannerlordConfig.Language, fullId));
+                translatedText.AddIDToValue(fullId);
+            }
+            else
+            {
+                translatedText = new TextObject(LocalizedTextManager.GetTranslatedText(BannerlordConfig.Language, id));
+                translatedText.AddIDToValue(id);
+            }
 
-        public static readonly string ModName = Translated("ModName");
-        public static readonly string ModLoadedInformation = Translated("ModLoadedInformation");
-        public static readonly string TownMainMenuOption = Translated("TownMainMenuOption");
-        public static readonly string TownMainMenuText = Translated("TownMainMenuText");
-        public static readonly string MainMenuLeaveOption = Translated("MainMenuLeaveOption");
-        public static readonly string MainMenuOpenEncyclopediaOption = Translated("MainMenuOpenEncyclopediaOption");
-        public static readonly string EncyclopediaDefaultVartsPageName = Translated("EncyclopediaDefaultVartsPageName");
-        public static readonly string EncyclopediaDefaultVartsPageDescription = Translated("EncyclopediaDefaultVartsPageDescription");
-        public static readonly string EncyclopediaVartsDtoFilterSettlementType = Translated("EncyclopediaVartsDtoFilterSettlementType");
-        public static readonly string EncyclopediaVartsDtoFilterWorkshopSuggestion = Translated("EncyclopediaVartsDtoFilterWorkshopSuggestion");
-        public static readonly string EncyclopediaVartsDtoFilterSuggestionStrength = Translated("EncyclopediaVartsDtoFilterSuggestionStrength");
-        public static readonly string EncyclopediaVartsDtoFilterVillageProduction = Translated("EncyclopediaVartsDtoFilterVillageProduction");
-        public static readonly string EncyclopediaVartsDtoFilterVillageBoundTown = Translated("EncyclopediaVartsDtoFilterVillageBoundTown");
+            return translatedText;
+        }
+        public static TextObject Town => Translate("bOTQ7Pta", true);
+        public static TextObject Village => Translate("Ua6CNLBZ", true);
+
+        public static TextObject ModName => Translate("ModName");
+        public static TextObject ModLoadedInformation => Translate("ModLoadedInformation");
+        public static TextObject TownMainMenuOption => Translate("TownMainMenuOption");
+        public static TextObject TownMainMenuText => Translate("TownMainMenuText");
+        public static TextObject MainMenuLeaveOption => Translate("MainMenuLeaveOption");
+        public static TextObject MainMenuOpenEncyclopediaOption => Translate("MainMenuOpenEncyclopediaOption");
+        public static TextObject MainMenuOpenLeaderboardHeroOption => Translate("MainMenuOpenLeaderboardHeroOption");
+        public static TextObject MainMenuOpenLeaderboardWorkshopOption => Translate("MainMenuOpenLeaderboardWorkshopOption");
+        public static TextObject EncyclopediaDefaultVartsPageName => Translate("EncyclopediaDefaultVartsPageName");
+        public static TextObject EncyclopediaDefaultVartsPageDescription => Translate("EncyclopediaDefaultVartsPageDescription");
+        public static TextObject EncyclopediaVartsDtoFilterSettlementType => Translate("EncyclopediaVartsDtoFilterSettlementType");
+        public static TextObject EncyclopediaVartsDtoFilterWorkshopSuggestion => Translate("EncyclopediaVartsDtoFilterWorkshopSuggestion");
+        public static TextObject EncyclopediaVartsDtoFilterSuggestionStrength => Translate("EncyclopediaVartsDtoFilterSuggestionStrength");
+        public static TextObject EncyclopediaVartsDtoFilterVillageProduction => Translate("EncyclopediaVartsDtoFilterVillageProduction");
+        public static TextObject EncyclopediaVartsDtoFilterVillageBoundTown => Translate("EncyclopediaVartsDtoFilterVillageBoundTown");
     }
 }

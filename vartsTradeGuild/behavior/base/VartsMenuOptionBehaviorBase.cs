@@ -61,9 +61,9 @@ namespace vartsTradeGuild.behavior.@base
 
         private void MenuConsequence(MenuCallbackArgs args)
         {
-            OnMenuOptionClicked();
+            OnMenuOptionClicked(args);
         }
 
-        protected abstract void OnMenuOptionClicked();
+        protected abstract void OnMenuOptionClicked(MenuCallbackArgs args);
     }
 }
