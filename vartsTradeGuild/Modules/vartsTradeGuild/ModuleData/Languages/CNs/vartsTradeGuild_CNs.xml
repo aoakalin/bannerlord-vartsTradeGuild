@@ -15,7 +15,6 @@
         <string id="vartsTradeGuild_EncyclopediaDefaultVartsPageName" text="VARTS" />
         <string id="vartsTradeGuild_EncyclopediaDefaultVartsPageDescription" text="VARTS贸易协会可以回答您所有与贸易有关的问题。" />
         <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterSettlementType" text="定居点类型" />
-        <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterFaction" text="阵营" />
         <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterWorkshopSuggestion" text="工坊建议" />
         <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterSuggestionStrength" text="建议强度：" />
         <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterVillageProduction" text="村庄生产" />

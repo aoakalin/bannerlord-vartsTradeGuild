@@ -15,7 +15,6 @@
     <string id="vartsTradeGuild_EncyclopediaDefaultVartsPageName" text="VARTS" />
     <string id="vartsTradeGuild_EncyclopediaDefaultVartsPageDescription" text="VARTS Trade Guild can answer all your trade related questions." />
     <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterSettlementType" text="Settlement Type" />
-    <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterFaction" text="Faction" />
     <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterWorkshopSuggestion" text="Workshop Suggestion" />
     <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterSuggestionStrength" text="Suggestion Strength" />
     <string id="vartsTradeGuild_EncyclopediaVartsDtoFilterVillageProduction" text="Village Production" />

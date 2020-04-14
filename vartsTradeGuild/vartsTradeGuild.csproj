@@ -35,6 +35,9 @@
       <HintPath>packages\Lib.Harmony.2.0.0.9\lib\net472\0Harmony.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoTrader, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\Users\OKAN\AppData\Roaming\Vortex\mountandblade2bannerlord\mods\AutoTrader-135-1-10-2-1586845649\Modules\AutoTrader\bin\Win64_Shipping_Client\AutoTrader.dll</HintPath>
+    </Reference>
     <Reference Include="SandBox.View, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\SandBox\bin\Win64_Shipping_Client\SandBox.View.dll</HintPath>
     </Reference>
@@ -55,6 +58,12 @@
     </Reference>
     <Reference Include="TaleWorlds.Core">
       <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="TaleWorlds.Core.ViewModelCollection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Core.ViewModelCollection.dll</HintPath>
+    </Reference>
+    <Reference Include="TaleWorlds.DotNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.DotNet.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Engine.dll</HintPath>
@@ -88,35 +97,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="behavior\base\VartsMenuOptionBehaviorBase.cs" />
-    <Compile Include="behavior\TownOpenVartsMenuBehavior.cs" />
-    <Compile Include="behavior\VartsMenuLeaveBehavior.cs" />
-    <Compile Include="behavior\VartsMenuOpenEncyclopediaBehavior.cs" />
-    <Compile Include="behavior\VartsMenuOpenLeaderboardHeroBehavior.cs" />
-    <Compile Include="behavior\VartsMenuOpenLeaderboardWorkshopBehavior.cs" />
-    <Compile Include="dto\HeroDto.cs" />
-    <Compile Include="dto\ProductionDto.cs" />
-    <Compile Include="dto\TownDto.cs" />
-    <Compile Include="dto\VartsDto.cs" />
-    <Compile Include="dto\VillageDto.cs" />
-    <Compile Include="dto\WorkshopDto.cs" />
-    <Compile Include="dto\WorkshopTypeDto.cs" />
-    <Compile Include="encyclopedia\DefaultEncyclopediaVartsPage.cs" />
-    <Compile Include="harmony\EncyclopediaManagerCreateEncyclopediaPagesPatch.cs" />
-    <Compile Include="harmony\MenuContextOpenTournamentLeaderboardsPatch.cs" />
-    <Compile Include="leaderboard\GauntletMenuLeaderboardHero.cs" />
-    <Compile Include="leaderboard\GauntletMenuLeaderboardWorkshop.cs" />
-    <Compile Include="leaderboard\vm\LeaderboardWorkshopSortControllerVM.cs" />
-    <Compile Include="leaderboard\vm\LeaderboardWorkshopVM.cs" />
-    <Compile Include="leaderboard\vm\LeaderboardWorkshopEntryItemVM.cs" />
-    <Compile Include="leaderboard\vm\VartsHeroVM.cs" />
-    <Compile Include="leaderboard\vm\VartsImageIdentifierVM.cs" />
-    <Compile Include="localization\LocalizationManager.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\behavior\base\VartsMenuOptionBehaviorBase.cs" />
+    <Compile Include="src\behavior\TownOpenVartsMenuBehavior.cs" />
+    <Compile Include="src\behavior\VartsMenuLeaveBehavior.cs" />
+    <Compile Include="src\behavior\VartsMenuOpenEncyclopediaBehavior.cs" />
+    <Compile Include="src\behavior\VartsMenuOpenLeaderboardHeroBehavior.cs" />
+    <Compile Include="src\behavior\VartsMenuOpenLeaderboardWorkshopBehavior.cs" />
+    <Compile Include="src\dto\HeroDto.cs" />
+    <Compile Include="src\dto\ProductionDto.cs" />
+    <Compile Include="src\dto\TownDto.cs" />
+    <Compile Include="src\dto\VartsDto.cs" />
+    <Compile Include="src\dto\VillageDto.cs" />
+    <Compile Include="src\dto\WorkshopDto.cs" />
+    <Compile Include="src\dto\WorkshopTypeDto.cs" />
+    <Compile Include="src\encyclopedia\DefaultEncyclopediaVartsPage.cs" />
+    <Compile Include="src\gauntlet\screenBase\VartsMainMenuGauntletScreenBase.cs" />
+    <Compile Include="src\gauntlet\viewModel\VartsMainMenuGauntletViewModel.cs" />
+    <Compile Include="src\harmony\EncyclopediaManagerCreateEncyclopediaPagesPatch.cs" />
+    <Compile Include="src\harmony\MenuContextOpenTournamentLeaderboardsPatch.cs" />
+    <Compile Include="src\leaderboard\GauntletMenuLeaderboardHero.cs" />
+    <Compile Include="src\leaderboard\GauntletMenuLeaderboardWorkshop.cs" />
+    <Compile Include="src\leaderboard\vm\LeaderboardWorkshopEntryItemVM.cs" />
+    <Compile Include="src\leaderboard\vm\LeaderboardWorkshopSortControllerVM.cs" />
+    <Compile Include="src\leaderboard\vm\LeaderboardWorkshopVM.cs" />
+    <Compile Include="src\localization\LocalizationManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

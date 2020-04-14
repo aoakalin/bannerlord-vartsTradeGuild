@@ -113,7 +113,7 @@
                                                                                         <ImageIdentifierWidget DataSource="{ImageIdentifier}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" />
                                                                                     </Children>
                                                                                 </ButtonWidget>
-
+                                                                                
                                                                                 <RichTextWidget WidthSizePolicy = "StretchToParent" HeightSizePolicy="StretchToParent" SuggestedWidth="100" Text="@Name" Command.LinkAlternateClick="ExecuteNameLink" Command.LinkClick="ExecuteNameLink" Brush="GameMenu.Leaderboard.Entry.Name.Text" MarginLeft="10" IsHidden="@IsMainHero"/>
                                                                                 <RichTextWidget WidthSizePolicy = "StretchToParent" HeightSizePolicy="StretchToParent" SuggestedWidth="100" Text="@Name" Command.LinkAlternateClick="ExecuteNameLink" Command.LinkClick="ExecuteNameLink" Brush="GameMenu.Leaderboard.Entry.Name.Player.Text" IsVisible="@IsMainHero" MarginLeft="10"/>
 
@@ -131,7 +131,7 @@
                                                                         </ListPanel>
 
                                                                         <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="33" SuggestedHeight="27" Sprite="SPScoreboard\leader_crown_icon" HorizontalAlignment="Left" MarginLeft="65" VerticalAlignment="Center" IsVisible="@IsChampion"/>
-
+                                                                        
                                                                     </Children>
                                                                 </Widget>
                                                             </ItemTemplate>

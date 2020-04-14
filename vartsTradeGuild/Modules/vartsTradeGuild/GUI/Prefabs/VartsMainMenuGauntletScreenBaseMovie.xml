@@ -1,0 +1,30 @@
+<Prefab>
+    <Window>
+        <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+            <Children>
+                <Standard.Background/>
+
+                <Standard.TopPanel Parameter.Title="@MovieTextHeader"/>
+
+                <ListPanel DoNotAcceptEvents="false" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren"
+                           HorizontalAlignment="Center" VerticalAlignment="Center" MarginTop="60"
+                           LayoutImp.LayoutMethod="HorizontalLeftToRight">
+                    <Children>
+                        <TextWidget WidthSizePolicy="Fixed" SuggestedWidth="256" HeightSizePolicy="Fixed"
+                                    SuggestedHeight="64" VerticalAlignment="Center" HorizontalAlignment="Right"
+                                    PositionYOffset="1" Brush="Clan.TabControl.Text" Text="@MovieTextName"/>
+                        <EditableTextWidget WidthSizePolicy="Fixed" SuggestedWidth="256" HeightSizePolicy="Fixed"
+                                            SuggestedHeight="64" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                            Brush="ScoreboardPanels_2" Brush.AlphaFactor="0.75" Brush.FontSize="32"
+                                            Brush.TextHorizontalAlignment="Center" Brush.TextVerticalAlignment="Center"
+                                            Text="@GuildName" IsVisible="true" PositionXOffset="16"/>
+                    </Children>
+                </ListPanel>
+
+                <Standard.Button HorizontalAlignment="Center" VerticalAlignment="Bottom" MarginBottom="20"
+                                 Command.Click="MovieActionDone" Parameter.Text="@MovieTextDone"/>
+
+            </Children>
+        </Widget>
+    </Window>
+</Prefab>
