@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using System.Linq;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 
-namespace vartsTradeGuild.encyclopedia.dto
+namespace vartsTradeGuild.dto
 {
     public class WorkshopDto
     {
@@ -11,8 +12,8 @@ namespace vartsTradeGuild.encyclopedia.dto
         public TextObject Town;
         public TextObject OwnerName;
         public TextObject OwnerClan;
-        public int OwnerGold;
         public TextObject OwnerFaction;
+        public int OwnerGold;
         public int Level;
         public int Capital;
         public int Expense;
@@ -62,6 +63,7 @@ namespace vartsTradeGuild.encyclopedia.dto
                     }
                 }
 
+                list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
                 return new MBReadOnlyList<WorkshopDto>(list);
             }
         }

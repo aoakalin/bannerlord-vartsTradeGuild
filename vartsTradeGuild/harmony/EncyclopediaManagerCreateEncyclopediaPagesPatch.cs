@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
 using TaleWorlds.CampaignSystem.Encyclopedia;
+using vartsTradeGuild.dto;
 using vartsTradeGuild.encyclopedia;
-using vartsTradeGuild.encyclopedia.dto;
 
 namespace vartsTradeGuild.harmony
 {

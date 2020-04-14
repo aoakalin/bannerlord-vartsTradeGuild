@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Localization;
 
-namespace vartsTradeGuild.encyclopedia.dto
+namespace vartsTradeGuild.dto
 {
     public class WorkshopTypeDto
     {
@@ -55,6 +56,7 @@ namespace vartsTradeGuild.encyclopedia.dto
                     list.Add(workshopTypeDto);
                 }
 
+                list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
                 return list;
             }
         }
@@ -83,7 +85,7 @@ namespace vartsTradeGuild.encyclopedia.dto
                     break;
             }
 
-            var list = new HashSet<WorkshopTypeDto>();
+            var hashSet = new HashSet<WorkshopTypeDto>();
             foreach (var workshopTypeDto in AllWorkshopTypeDto)
             {
                 foreach (var productionDto in workshopTypeDto.Productions)
@@ -92,12 +94,14 @@ namespace vartsTradeGuild.encyclopedia.dto
                     {
                         if (productionDtoInput.ToLower().ToString().Equals(input.ToLower().ToString()))
                         {
-                            list.Add(workshopTypeDto);
+                            hashSet.Add(workshopTypeDto);
                         }
                     }
                 }
             }
 
+            var list = hashSet.ToList();
+            list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
             return list;
         }
 

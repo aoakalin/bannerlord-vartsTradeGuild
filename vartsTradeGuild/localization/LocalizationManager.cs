@@ -36,6 +36,7 @@ namespace vartsTradeGuild.localization
         public static TextObject EncyclopediaDefaultVartsPageName => Translate("EncyclopediaDefaultVartsPageName");
         public static TextObject EncyclopediaDefaultVartsPageDescription => Translate("EncyclopediaDefaultVartsPageDescription");
         public static TextObject EncyclopediaVartsDtoFilterSettlementType => Translate("EncyclopediaVartsDtoFilterSettlementType");
+        public static TextObject EncyclopediaVartsDtoFilterFaction => Translate("EncyclopediaVartsDtoFilterFaction");
         public static TextObject EncyclopediaVartsDtoFilterWorkshopSuggestion => Translate("EncyclopediaVartsDtoFilterWorkshopSuggestion");
         public static TextObject EncyclopediaVartsDtoFilterSuggestionStrength => Translate("EncyclopediaVartsDtoFilterSuggestionStrength");
         public static TextObject EncyclopediaVartsDtoFilterVillageProduction => Translate("EncyclopediaVartsDtoFilterVillageProduction");

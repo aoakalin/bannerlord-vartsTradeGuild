@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TaleWorlds.CampaignSystem.Encyclopedia;
 using TaleWorlds.Localization;
-using vartsTradeGuild.encyclopedia.dto;
+using vartsTradeGuild.dto;
 using vartsTradeGuild.localization;
 
 namespace vartsTradeGuild.encyclopedia
@@ -50,7 +50,7 @@ namespace vartsTradeGuild.encyclopedia
                         vartsDto.StringId, "Settlement"));
             }
 
-            _items = source.OrderBy(h => h.Name);
+            _items = source.OrderBy(h => h.Name.ToLower().ToString());
 
             var filtersVartsDtoType = new List<EncyclopediaFilterItem>();
             foreach (var textObject in VartsDto.DistinctType)
@@ -66,8 +66,30 @@ namespace vartsTradeGuild.encyclopedia
                 }));
             }
 
+            filtersVartsDtoType = filtersVartsDtoType.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+            filtersVartsDtoType.Reverse();
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVartsDtoType,
                 LocalizationManager.EncyclopediaVartsDtoFilterSettlementType));
+
+            var filtersFaction = new List<EncyclopediaFilterItem>();
+            foreach (var textObject in VartsDto.DistinctFaction)
+            {
+                filtersFaction.Add(new EncyclopediaFilterItem(textObject, o =>
+                {
+                    if (o is VartsDto dto)
+                    {
+                        return dto.Faction.ToLower().ToString().Equals(textObject.ToLower().ToString());
+                    }
+
+                    return false;
+                }));
+            }
+
+            filtersFaction =
+                filtersFaction.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+            filtersFaction.Reverse();
+            encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersFaction,
+                LocalizationManager.EncyclopediaVartsDtoFilterFaction));
 
             var filtersTownSuggestedWorkshopTypes = new List<EncyclopediaFilterItem>();
             foreach (var textObject in TownDto.DistinctSuggestedWorkshops)
@@ -90,6 +112,9 @@ namespace vartsTradeGuild.encyclopedia
                 }));
             }
 
+            filtersTownSuggestedWorkshopTypes =
+                filtersTownSuggestedWorkshopTypes.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+            filtersTownSuggestedWorkshopTypes.Reverse();
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersTownSuggestedWorkshopTypes,
                 LocalizationManager.EncyclopediaVartsDtoFilterWorkshopSuggestion));
 
@@ -114,6 +139,8 @@ namespace vartsTradeGuild.encyclopedia
                     return false;
                 })
             };
+            filtersTownSuggestedWorkshopStrength = filtersTownSuggestedWorkshopStrength
+                .OrderBy(o => o.Name.ToLower().ToString()).ToList();
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersTownSuggestedWorkshopStrength,
                 LocalizationManager.EncyclopediaVartsDtoFilterSuggestionStrength));
 
@@ -131,6 +158,9 @@ namespace vartsTradeGuild.encyclopedia
                 }));
             }
 
+            filtersVillagePrimaryProduction =
+                filtersVillagePrimaryProduction.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+            filtersVillagePrimaryProduction.Reverse();
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVillagePrimaryProduction,
                 LocalizationManager.EncyclopediaVartsDtoFilterVillageProduction));
 
@@ -148,6 +178,9 @@ namespace vartsTradeGuild.encyclopedia
                 }));
             }
 
+            filtersVillageTradeBoundTownName =
+                filtersVillageTradeBoundTownName.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+            filtersVillageTradeBoundTownName.Reverse();
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVillageTradeBoundTownName,
                 LocalizationManager.EncyclopediaVartsDtoFilterVillageBoundTown));
 

@@ -6,7 +6,7 @@ using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using vartsTradeGuild.localization;
 
-namespace vartsTradeGuild.encyclopedia.dto
+namespace vartsTradeGuild.dto
 {
     public class VillageDto : VartsDto
     {
@@ -30,16 +30,22 @@ namespace vartsTradeGuild.encyclopedia.dto
                     {
                         StringId = settlement.StringId,
                         Name = settlement.Name,
-                        TradeBoundTownName = settlement.Village.TradeBound.GetName(),
-                        PrimaryProduction = settlement.Village.VillageType.PrimaryProduction.Name,
-                        CustomName = new TextObject("V " + settlement.Name + " (P: " +
-                                                    settlement.Village.VillageType.PrimaryProduction.Name +
-                                                    " | T: " + settlement.Village.TradeBound.GetName() +
+                        Faction = settlement.MapFaction?.Name,
+                        Clan = settlement.OwnerClan?.Name,
+                        Owner = settlement.ClaimedBy?.Name,
+                        TradeBoundTownName = settlement.Village?.TradeBound?.GetName(),
+                        PrimaryProduction = settlement.Village?.VillageType?.PrimaryProduction?.Name,
+//                        CustomName = new TextObject("V " + settlement.Name + " (P: " +
+                        CustomName = new TextObject(settlement.Name + " (" +
+                                                    settlement.Village?.VillageType?.PrimaryProduction?.Name +
+//                                                    " | T: " + settlement.Village?.TradeBound?.GetName() +
+                                                    " >> " + settlement.Village?.TradeBound?.GetName() +
                                                     ")")
                     };
                     list.Add(villageDto);
                 }
 
+                list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
                 return new MBReadOnlyList<VillageDto>(list);
             }
         }
@@ -55,7 +61,9 @@ namespace vartsTradeGuild.encyclopedia.dto
                     hashSet.Add(villageDto.PrimaryProduction);
                 }
 
-                return new MBReadOnlyList<TextObject>(hashSet.ToList());
+                var list = hashSet.ToList();
+                list = list.OrderBy(o => o.ToLower().ToString()).ToList();
+                return new MBReadOnlyList<TextObject>(list);
             }
         }
 
@@ -70,7 +78,10 @@ namespace vartsTradeGuild.encyclopedia.dto
                     hashSet.Add(villageDto.TradeBoundTownName);
                 }
 
-                return new MBReadOnlyList<TextObject>(hashSet.ToList());
+                var list = hashSet.ToList();
+                list = list.OrderBy(o => o.ToLower().ToString()).ToList();
+
+                return new MBReadOnlyList<TextObject>(list);
             }
         }
 
@@ -98,7 +109,9 @@ namespace vartsTradeGuild.encyclopedia.dto
                 }
             }
 
-            return new MBReadOnlyList<VillageDto>(hashSet.ToList());
+            var list = hashSet.ToList();
+            list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+            return new MBReadOnlyList<VillageDto>(list);
         }
 
         protected override TextObject VartsDtoType()

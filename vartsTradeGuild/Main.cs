@@ -5,7 +5,7 @@ using TaleWorlds.Core;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 using vartsTradeGuild.behavior;
-using vartsTradeGuild.encyclopedia.dto;
+using vartsTradeGuild.dto;
 using vartsTradeGuild.localization;
 
 namespace vartsTradeGuild

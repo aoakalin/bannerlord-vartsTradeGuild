@@ -5,12 +5,15 @@ using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 
-namespace vartsTradeGuild.encyclopedia.dto
+namespace vartsTradeGuild.dto
 {
     public abstract class VartsDto : MBObjectBase
     {
         public TextObject Name;
         public TextObject CustomName;
+        public TextObject Faction;
+        public TextObject Clan;
+        public TextObject Owner;
 
         public TextObject Type => VartsDtoType();
 
@@ -31,7 +34,27 @@ namespace vartsTradeGuild.encyclopedia.dto
                     );
                 }
 
-                return new MBReadOnlyList<TextObject>(hashSet.ToList().ConvertAll(s => new TextObject(s)));
+                var list = hashSet.ToList();
+                list = list.OrderBy(o => o.ToLower()).ToList();
+                return new MBReadOnlyList<TextObject>(list.ConvertAll(s => new TextObject(s)));
+            }
+        }
+
+        public static IEnumerable<TextObject> DistinctFaction
+        {
+            get
+            {
+                var hashSet = new HashSet<string>();
+                foreach (var vartsDto in All)
+                {
+                    hashSet.Add(
+                        LocalizedTextManager.GetTranslatedText(BannerlordConfig.Language, vartsDto.Faction.GetID())
+                    );
+                }
+
+                var list = hashSet.ToList();
+                list = list.OrderBy(o => o.ToLower()).ToList();
+                return new MBReadOnlyList<TextObject>(list.ConvertAll(s => new TextObject(s)));
             }
         }
 
@@ -48,7 +71,9 @@ namespace vartsTradeGuild.encyclopedia.dto
                 _all.Add(townDto);
             }
 
-            All = new MBReadOnlyList<VartsDto>(_all.ToList());
+            var list = _all.ToList();
+            list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+            All = new MBReadOnlyList<VartsDto>(list);
         }
     }
 }

@@ -5,7 +5,7 @@ using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using vartsTradeGuild.localization;
 
-namespace vartsTradeGuild.encyclopedia.dto
+namespace vartsTradeGuild.dto
 {
     public class TownDto : VartsDto
     {
@@ -30,6 +30,9 @@ namespace vartsTradeGuild.encyclopedia.dto
                     {
                         StringId = settlement.StringId,
                         Name = settlement.Name,
+                        Faction = settlement.MapFaction?.Name,
+                        Clan = settlement.OwnerClan?.Name,
+                        Owner = settlement.ClaimedBy?.Name,
                         Villages = (MBReadOnlyList<VillageDto>) tradeBoundVillages,
                         CustomName = new TextObject("this will be changed below, this is a placeholder for debugging")
                     };
@@ -43,7 +46,9 @@ namespace vartsTradeGuild.encyclopedia.dto
                         }
                     }
 
-                    townDto.SuggestedWorkshops = new MBReadOnlyList<WorkshopTypeDto>(suggestedWorkshops.ToList());
+                    var workshopSuggestionList = suggestedWorkshops.ToList();
+                    workshopSuggestionList = workshopSuggestionList.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+                    townDto.SuggestedWorkshops = new MBReadOnlyList<WorkshopTypeDto>(workshopSuggestionList);
 
                     var workshopSuggestionDictionary = new Dictionary<string, int>();
                     var townDtoSuggestedWorkshops = townDto.SuggestedWorkshops;
@@ -61,15 +66,16 @@ namespace vartsTradeGuild.encyclopedia.dto
                         workshopSuggestionDictionary[key] = value;
                     }
 
-                    var townCustomName = "T " + settlement.Name + " (";
+//                    var townCustomName = "T " + settlement.Name + " (";
+                    var townCustomName = settlement.Name + " (";
                     var commaCounter = 1;
-                    foreach (KeyValuePair<string, int> keyValuePair in workshopSuggestionDictionary)
+                    foreach (var keyValuePair in workshopSuggestionDictionary)
                     {
                         townCustomName += keyValuePair.Key;
                         if (keyValuePair.Value > 1)
                         {
                             townCustomName += "(";
-                            for (int i = 1; i < keyValuePair.Value; i++)
+                            for (var i = 1; i < keyValuePair.Value; i++)
                             {
                                 townCustomName += "+";
                             }
@@ -88,7 +94,7 @@ namespace vartsTradeGuild.encyclopedia.dto
 
                     if (workshopSuggestionDictionary.Count == 0)
                     {
-                        townCustomName += "NONE";
+                        townCustomName += "-";
                     }
 
                     townCustomName += ")";
@@ -98,6 +104,7 @@ namespace vartsTradeGuild.encyclopedia.dto
                     list.Add(townDto);
                 }
 
+                list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
                 return list;
             }
         }
@@ -116,7 +123,9 @@ namespace vartsTradeGuild.encyclopedia.dto
                     }
                 }
 
-                return new MBReadOnlyList<TextObject>(hashSet.ToList());
+                var list = hashSet.ToList();
+                list = list.OrderBy(o => o.ToLower().ToString()).ToList();
+                return new MBReadOnlyList<TextObject>(list);
             }
         }
 
@@ -134,7 +143,9 @@ namespace vartsTradeGuild.encyclopedia.dto
                 }
             }
 
-            return new MBReadOnlyList<TownDto>(hashSet.ToList());
+            var list = hashSet.ToList();
+            list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+            return new MBReadOnlyList<TownDto>(list);
         }
 
         protected override TextObject VartsDtoType()
