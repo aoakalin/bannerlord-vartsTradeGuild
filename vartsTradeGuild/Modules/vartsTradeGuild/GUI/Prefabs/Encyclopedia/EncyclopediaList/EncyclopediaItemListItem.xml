@@ -1,0 +1,8 @@
+<Window>
+    <ButtonWidget DoNotPassEventsToChildren="true" Command.Click="Execute" HeightSizePolicy ="Fixed" WidthSizePolicy="StretchToParent" SuggestedHeight="60" Brush="Encyclopedia.ListButton" IsHidden="@IsFiltered">
+        <Children>
+            <TextWidget HeightSizePolicy ="StretchToParent" WidthSizePolicy="StretchToParent" Brush="EncyclopediaList.Filter.Name.Text" Brush.FontSize="24" Text="@Name" Brush.TextHorizontalAlignment="Left" MarginLeft="33">
+            </TextWidget>
+        </Children>
+    </ButtonWidget>
+</Window>
