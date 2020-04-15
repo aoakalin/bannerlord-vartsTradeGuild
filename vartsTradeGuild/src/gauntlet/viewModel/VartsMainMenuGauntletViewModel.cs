@@ -1,8 +1,8 @@
 using TaleWorlds.Engine.Screens;
 using TaleWorlds.Library;
-using vartsTradeGuild.src.localization;
+using vartsTradeGuild.localization;
 
-namespace vartsTradeGuild.src.gauntlet.viewModel
+namespace vartsTradeGuild.gauntlet.viewModel
 {
     internal class VartsMainMenuGauntletViewModel : ViewModel
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using TaleWorlds.Localization;
 
-namespace vartsTradeGuild.src.dto
+namespace vartsTradeGuild.dto
 {
     public class ProductionDto
     {

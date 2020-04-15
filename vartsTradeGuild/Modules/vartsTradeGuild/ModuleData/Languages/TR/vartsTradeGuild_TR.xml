@@ -9,6 +9,7 @@
     <string id="vartsTradeGuild_TownMainMenuOption" text="VARTS Ticaret Loncası'nı ziyaret et" />
     <string id="vartsTradeGuild_TownMainMenuText" text="VARTS Ticaret Loncası Temsilcisi: Hoşgeldin, dostum. Ticaret ile ilgili bütün sorularını cevaplayabilirim." />
     <string id="vartsTradeGuild_MainMenuLeaveOption" text="Daha sonra geri geleceğim." />
+    <string id="vartsTradeGuild_MainMenuOpenConfigOption" text="Yeniden markalaşma zamanı..." />
     <string id="vartsTradeGuild_MainMenuOpenEncyclopediaOption" text="Atölyeler hakkında konuşalım..." />
     <string id="vartsTradeGuild_MainMenuOpenLeaderboardHeroOption" text="En zengin insanlar hakkında..." />
     <string id="vartsTradeGuild_MainMenuOpenLeaderboardWorkshopOption" text="Trend olan işletmeler..." />

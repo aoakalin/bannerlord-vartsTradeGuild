@@ -9,6 +9,7 @@
         <string id="vartsTradeGuild_TownMainMenuOption" text="访问 VARTS 贸易协会" />
         <string id="vartsTradeGuild_TownMainMenuText" text="VARTS贸易协会经理人：欢迎，我的朋友。我可以回答您所有与贸易有关的问题。" />
         <string id="vartsTradeGuild_MainMenuLeaveOption" text="下次一定" />
+        <string id="vartsTradeGuild_MainMenuOpenConfigOption" text="是时候重塑品牌了" />
         <string id="vartsTradeGuild_MainMenuOpenEncyclopediaOption" text="请开始你的表演..." />
         <string id="vartsTradeGuild_MainMenuOpenLeaderboardHeroOption" text="谁是世界首富来着..." />
         <string id="vartsTradeGuild_MainMenuOpenLeaderboardWorkshopOption" text="最近的业务趋势是..." />

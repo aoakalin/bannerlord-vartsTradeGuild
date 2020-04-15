@@ -1,4 +1,4 @@
-namespace vartsTradeGuild.src.dto
+namespace vartsTradeGuild.dto
 {
     public class HeroDto
     {

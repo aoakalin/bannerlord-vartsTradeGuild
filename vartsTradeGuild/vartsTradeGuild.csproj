@@ -102,6 +102,7 @@
     <Compile Include="src\behavior\base\VartsMenuOptionBehaviorBase.cs" />
     <Compile Include="src\behavior\TownOpenVartsMenuBehavior.cs" />
     <Compile Include="src\behavior\VartsMenuLeaveBehavior.cs" />
+    <Compile Include="src\behavior\VartsMenuOpenConfigBehavior.cs" />
     <Compile Include="src\behavior\VartsMenuOpenEncyclopediaBehavior.cs" />
     <Compile Include="src\behavior\VartsMenuOpenLeaderboardHeroBehavior.cs" />
     <Compile Include="src\behavior\VartsMenuOpenLeaderboardWorkshopBehavior.cs" />

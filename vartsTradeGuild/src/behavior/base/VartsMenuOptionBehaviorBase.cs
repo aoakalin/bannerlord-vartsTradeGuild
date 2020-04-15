@@ -1,7 +1,7 @@
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.GameMenus;
 
-namespace vartsTradeGuild.src.behavior.@base
+namespace vartsTradeGuild.behavior.@base
 {
     public abstract class VartsMenuOptionBehaviorBase : CampaignBehaviorBase
     {

@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using System.Linq;
 using TaleWorlds.CampaignSystem.Encyclopedia;
 using TaleWorlds.Localization;
-using vartsTradeGuild.src.dto;
-using vartsTradeGuild.src.localization;
+using vartsTradeGuild.dto;
+using vartsTradeGuild.localization;
 
-namespace vartsTradeGuild.src.encyclopedia
+namespace vartsTradeGuild.encyclopedia
 {
     [EncyclopediaModel(new[] {typeof(VartsDto)})]
     public class DefaultEncyclopediaVartsPage : EncyclopediaPage

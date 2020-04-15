@@ -2,9 +2,9 @@ using System.Reflection;
 using HarmonyLib;
 using SandBox.View.Menu;
 using TaleWorlds.CampaignSystem;
-using vartsTradeGuild.src.behavior;
+using vartsTradeGuild.behavior;
 
-namespace vartsTradeGuild.src.harmony
+namespace vartsTradeGuild.harmony
 {
     [HarmonyPatch(typeof(MenuContext), "OpenTournamentLeaderboards")]
     public class MenuContextOpenTournamentLeaderboardsPatch

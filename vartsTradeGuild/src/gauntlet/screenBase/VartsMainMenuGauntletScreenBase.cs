@@ -1,9 +1,9 @@
 using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.Engine.Screens;
 using TaleWorlds.GauntletUI.Data;
-using vartsTradeGuild.src.gauntlet.viewModel;
+using vartsTradeGuild.gauntlet.viewModel;
 
-namespace vartsTradeGuild.src.gauntlet.screenBase
+namespace vartsTradeGuild.gauntlet.screenBase
 {
     public class VartsMainMenuGauntletScreenBase : ScreenBase
     {

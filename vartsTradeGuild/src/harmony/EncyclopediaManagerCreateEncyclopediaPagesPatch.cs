@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
 using TaleWorlds.CampaignSystem.Encyclopedia;
-using vartsTradeGuild.src.dto;
-using vartsTradeGuild.src.encyclopedia;
+using vartsTradeGuild.dto;
+using vartsTradeGuild.encyclopedia;
 
-namespace vartsTradeGuild.src.harmony
+namespace vartsTradeGuild.harmony
 {
     [HarmonyPatch(typeof(EncyclopediaManager), "CreateEncyclopediaPages")]
     public class EncyclopediaManagerCreateEncyclopediaPagesPatch

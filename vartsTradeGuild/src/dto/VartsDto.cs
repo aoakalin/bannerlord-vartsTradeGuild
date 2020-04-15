@@ -5,7 +5,7 @@ using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 
-namespace vartsTradeGuild.src.dto
+namespace vartsTradeGuild.dto
 {
     public abstract class VartsDto : MBObjectBase
     {

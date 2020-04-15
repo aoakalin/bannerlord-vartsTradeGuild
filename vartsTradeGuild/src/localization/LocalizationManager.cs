@@ -1,7 +1,7 @@
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 
-namespace vartsTradeGuild.src.localization
+namespace vartsTradeGuild.localization
 {
     public static class LocalizationManager
     {
@@ -47,7 +47,7 @@ namespace vartsTradeGuild.src.localization
         public static TextObject TownMainMenuText => Translate("TownMainMenuText");
         public static TextObject MainMenuLeaveOption => Translate("MainMenuLeaveOption");
         public static TextObject MainMenuOpenEncyclopediaOption => Translate("MainMenuOpenEncyclopediaOption");
-        public static TextObject MainMenuChangeGuildNameOption => Translate("MainMenuChangeGuildNameOption");
+        public static TextObject MainMenuOpenConfigOption => Translate("MainMenuOpenConfigOption");
         public static TextObject MainMenuOpenLeaderboardHeroOption => Translate("MainMenuOpenLeaderboardHeroOption");
 
         public static TextObject MainMenuOpenLeaderboardWorkshopOption =>

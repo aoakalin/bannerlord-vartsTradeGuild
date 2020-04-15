@@ -4,7 +4,7 @@ using System.Linq;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Localization;
 
-namespace vartsTradeGuild.src.dto
+namespace vartsTradeGuild.dto
 {
     public class WorkshopTypeDto
     {

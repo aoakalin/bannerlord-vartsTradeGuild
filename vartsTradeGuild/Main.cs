@@ -9,10 +9,10 @@ using TaleWorlds.Engine;
 using TaleWorlds.Engine.Screens;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.Missions;
-using vartsTradeGuild.src.behavior;
-using vartsTradeGuild.src.dto;
-using vartsTradeGuild.src.gauntlet.screenBase;
-using vartsTradeGuild.src.localization;
+using vartsTradeGuild.behavior;
+using vartsTradeGuild.dto;
+using vartsTradeGuild.gauntlet.screenBase;
+using vartsTradeGuild.localization;
 
 namespace vartsTradeGuild
 {
@@ -30,9 +30,9 @@ namespace vartsTradeGuild
             base.OnSubModuleLoad();
             Harmony.PatchAll();
             Initialize();
-            Module.CurrentModule.AddInitialStateOption(new InitialStateOption(ModId, LocalizationManager.ModName, 9999,
-                () => ScreenManager.PushScreen(ViewCreatorManager.CreateScreenView<VartsMainMenuGauntletScreenBase>()),
-                false));
+//            Module.CurrentModule.AddInitialStateOption(new InitialStateOption(ModId, LocalizationManager.ModName, 9999,
+//                () => ScreenManager.PushScreen(ViewCreatorManager.CreateScreenView<VartsMainMenuGauntletScreenBase>()),
+//                false));
         }
 
         protected override void OnSubModuleUnloaded()
@@ -53,6 +53,7 @@ namespace vartsTradeGuild
             ((CampaignGameStarter) gameStarterObject).AddGameMenu(ModId,
                 LocalizationManager.TownMainMenuText.ToString(), ModMenuInitDelegate);
             ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenEncyclopediaBehavior());
+            ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenConfigBehavior());
 //            ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenLeaderboardHeroBehavior());
 //            ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenLeaderboardWorkshopBehavior());
             ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuLeaveBehavior());

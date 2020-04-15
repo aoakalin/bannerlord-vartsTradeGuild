@@ -3,9 +3,9 @@ using System.Linq;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
-using vartsTradeGuild.src.localization;
+using vartsTradeGuild.localization;
 
-namespace vartsTradeGuild.src.dto
+namespace vartsTradeGuild.dto
 {
     public class TownDto : VartsDto
     {

@@ -1,9 +1,9 @@
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.GameMenus;
-using vartsTradeGuild.src.behavior.@base;
-using vartsTradeGuild.src.localization;
+using vartsTradeGuild.behavior.@base;
+using vartsTradeGuild.localization;
 
-namespace vartsTradeGuild.src.behavior
+namespace vartsTradeGuild.behavior
 {
     public class VartsMenuOpenEncyclopediaBehavior : VartsMenuOptionBehaviorBase
     {
