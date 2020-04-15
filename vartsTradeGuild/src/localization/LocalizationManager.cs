@@ -16,6 +16,7 @@ namespace vartsTradeGuild.localization
                 {
                     text = text.Replace("VARTS", Main.GetGuildName());
                 }
+
                 translatedText = new TextObject(text);
                 translatedText.AddIDToValue(fullId);
             }
@@ -26,10 +27,11 @@ namespace vartsTradeGuild.localization
                 {
                     text = text.Replace("VARTS", Main.GetGuildName());
                 }
+
                 translatedText = new TextObject(text);
                 translatedText.AddIDToValue(id);
             }
-            
+
             return translatedText;
         }
 

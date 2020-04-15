@@ -29,7 +29,7 @@ namespace vartsTradeGuild.gauntlet.menuView
             this._gauntletLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
             this._gauntletLayer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("GenericPanelGameKeyCategory"));
             this._movie =
-                this._gauntletLayer.LoadMovie("GauntletMenuLeaderboardWorkshopMovie", (ViewModel) this._dataSource);
+                this._gauntletLayer.LoadMovie("VartsLeaderboardWorkshopMenuViewMovie", (ViewModel) this._dataSource);
             this._gauntletLayer.IsFocusLayer = true;
             ScreenManager.TrySetFocus((ScreenLayer) this._gauntletLayer);
             this.MenuViewContext.AddLayer((ScreenLayer) this._gauntletLayer);

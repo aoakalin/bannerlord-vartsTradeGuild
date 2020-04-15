@@ -3,6 +3,7 @@ using HarmonyLib;
 using SandBox.View.Menu;
 using TaleWorlds.CampaignSystem;
 using vartsTradeGuild.behavior;
+using vartsTradeGuild.gauntlet.menuView;
 
 namespace vartsTradeGuild.harmony
 {
@@ -33,8 +34,8 @@ namespace vartsTradeGuild.harmony
             }
 
             var menuTournamentLeaderboard = VartsMenuOpenLeaderboardWorkshopBehavior.IsTryingToOpenLeaderboard
-                ? handler.AddMenuView<GauntletMenuLeaderboardWorkshop>()
-                : handler.AddMenuView<GauntletMenuLeaderboardHero>();
+                ? handler.AddMenuView<VartsLeaderboardWorkshopMenuView>()
+                : handler.AddMenuView<VartsLeaderboardHeroMenuView>();
             menuTournamentLeaderboardField.SetValue(handler, menuTournamentLeaderboard);
             handlerField.SetValue(__instance, handler);
             return false;

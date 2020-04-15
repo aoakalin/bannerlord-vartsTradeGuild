@@ -6,12 +6,9 @@ using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.GameMenus;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
-using TaleWorlds.Engine.Screens;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.View.Missions;
 using vartsTradeGuild.behavior;
 using vartsTradeGuild.dto;
-using vartsTradeGuild.gauntlet.screenBase;
 using vartsTradeGuild.localization;
 
 namespace vartsTradeGuild
