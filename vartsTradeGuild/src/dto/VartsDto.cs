@@ -47,9 +47,9 @@ namespace vartsTradeGuild.src.dto
                 var hashSet = new HashSet<string>();
                 foreach (var vartsDto in All)
                 {
-                    hashSet.Add(
-                        LocalizedTextManager.GetTranslatedText(BannerlordConfig.Language, vartsDto.Faction.GetID())
-                    );
+                    var factionName = LocalizedTextManager.GetTranslatedText(BannerlordConfig.Language, vartsDto.Faction.GetID());
+                    if (factionName == null) factionName = vartsDto.Faction.ToString(); //if no localization exists (e.g. for player's faction name) default to untranslated string
+                    hashSet.Add(factionName);
                 }
 
                 var list = hashSet.ToList();
