@@ -31,8 +31,6 @@ namespace vartsTradeGuild.gauntlet.viewModel
             float result;
             if (float.TryParse(this.PrizeStr, out result))
                 this.PrizeValue = result;
-            this.IsMainHero = hero == TaleWorlds.CampaignSystem.Hero.MainHero;
-            this.Hero = new HeroVM(hero);
             this.RefreshValues();
         }
 
@@ -94,19 +92,6 @@ namespace vartsTradeGuild.gauntlet.viewModel
                     return;
                 this._isChampion = value;
                 this.OnPropertyChanged(nameof(IsChampion));
-            }
-        }
-
-        [DataSourceProperty]
-        public bool IsMainHero
-        {
-            get { return this._isMainHero; }
-            set
-            {
-                if (value == this._isMainHero)
-                    return;
-                this._isMainHero = value;
-                this.OnPropertyChanged(nameof(IsMainHero));
             }
         }
 
