@@ -5,7 +5,7 @@ using vartsTradeGuild.gauntlet.viewModel;
 
 namespace vartsTradeGuild.gauntlet.screenBase
 {
-    public class VartsMainMenuGauntletScreenBase : ScreenBase
+    public class VartsConfigMenuScreenBase : ScreenBase
     {
         private VartsMainMenuGauntletViewModel _dataSource;
         private GauntletLayer _gauntletLayer;
@@ -21,7 +21,7 @@ namespace vartsTradeGuild.gauntlet.screenBase
             };
             AddLayer(_gauntletLayer);
             _gauntletLayer.InputRestrictions.SetInputRestrictions();
-            _gauntletMovie= _gauntletLayer.LoadMovie("VartsMainMenuGauntletScreenBaseMovie", _dataSource);
+            _gauntletMovie = _gauntletLayer.LoadMovie("VartsConfigMenuScreenBaseMovie", _dataSource);
         }
 
         protected override void OnActivate()

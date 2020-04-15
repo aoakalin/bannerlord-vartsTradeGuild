@@ -6,7 +6,7 @@ namespace vartsTradeGuild.behavior
 {
     public class VartsMenuOpenLeaderboardWorkshopBehavior : VartsMenuOptionBehaviorBase
     {
-        public static bool IsTryingToOpenLeaderboard = false;
+        public static bool IsTryingToOpenLeaderboard;
 
         public VartsMenuOpenLeaderboardWorkshopBehavior() : base(Main.ModId, "OpenLeaderboardWorkshop",
             LocalizationManager.MainMenuOpenLeaderboardWorkshopOption.ToString(), GameMenuOption.LeaveType.Trade, false)

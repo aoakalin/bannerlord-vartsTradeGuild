@@ -114,15 +114,15 @@
     <Compile Include="src\dto\WorkshopDto.cs" />
     <Compile Include="src\dto\WorkshopTypeDto.cs" />
     <Compile Include="src\encyclopedia\DefaultEncyclopediaVartsPage.cs" />
-    <Compile Include="src\gauntlet\screenBase\VartsMainMenuGauntletScreenBase.cs" />
+    <Compile Include="src\gauntlet\menuView\VartsLeaderboardHeroMenuView.cs" />
+    <Compile Include="src\gauntlet\menuView\VartsLeaderboardWorkshopMenuView.cs" />
+    <Compile Include="src\gauntlet\screenBase\VartsConfigMenuScreenBase.cs" />
+    <Compile Include="src\gauntlet\viewModel\VartsLeaderboardWorkshopEntryItemVM.cs" />
+    <Compile Include="src\gauntlet\viewModel\VartsLeaderboardWorkshopSortControllerVM.cs" />
+    <Compile Include="src\gauntlet\viewModel\VartsLeaderboardWorkshopVM.cs" />
     <Compile Include="src\gauntlet\viewModel\VartsMainMenuGauntletViewModel.cs" />
     <Compile Include="src\harmony\EncyclopediaManagerCreateEncyclopediaPagesPatch.cs" />
     <Compile Include="src\harmony\MenuContextOpenTournamentLeaderboardsPatch.cs" />
-    <Compile Include="src\leaderboard\GauntletMenuLeaderboardHero.cs" />
-    <Compile Include="src\leaderboard\GauntletMenuLeaderboardWorkshop.cs" />
-    <Compile Include="src\leaderboard\vm\LeaderboardWorkshopEntryItemVM.cs" />
-    <Compile Include="src\leaderboard\vm\LeaderboardWorkshopSortControllerVM.cs" />
-    <Compile Include="src\leaderboard\vm\LeaderboardWorkshopVM.cs" />
     <Compile Include="src\localization\LocalizationManager.cs" />
   </ItemGroup>
   <ItemGroup>

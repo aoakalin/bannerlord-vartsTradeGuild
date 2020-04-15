@@ -16,7 +16,7 @@ namespace vartsTradeGuild.behavior
 
         protected override void OnMenuOptionClicked(MenuCallbackArgs args)
         {
-            ScreenManager.PushScreen(ViewCreatorManager.CreateScreenView<VartsMainMenuGauntletScreenBase>());
+            ScreenManager.PushScreen(ViewCreatorManager.CreateScreenView<VartsConfigMenuScreenBase>());
         }
     }
 }

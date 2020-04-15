@@ -55,7 +55,7 @@ namespace vartsTradeGuild
             ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenEncyclopediaBehavior());
             ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenConfigBehavior());
 //            ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenLeaderboardHeroBehavior());
-//            ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenLeaderboardWorkshopBehavior());
+            ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenLeaderboardWorkshopBehavior());
             ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuLeaveBehavior());
 
             ((CampaignGameStarter) gameStarterObject).AddBehavior(new TownOpenVartsMenuBehavior());

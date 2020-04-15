@@ -32,10 +32,10 @@ namespace vartsTradeGuild.harmony
                 return false;
             }
 
-//            var menuTournamentLeaderboard = VartsMenuOpenLeaderboardWorkshopBehavior.IsTryingToOpenLeaderboard
-//                ? handler.AddMenuView<GauntletMenuLeaderboardWorkshop>()
-//                : handler.AddMenuView<GauntletMenuLeaderboardHero>();
-//            menuTournamentLeaderboardField.SetValue(handler, menuTournamentLeaderboard);
+            var menuTournamentLeaderboard = VartsMenuOpenLeaderboardWorkshopBehavior.IsTryingToOpenLeaderboard
+                ? handler.AddMenuView<GauntletMenuLeaderboardWorkshop>()
+                : handler.AddMenuView<GauntletMenuLeaderboardHero>();
+            menuTournamentLeaderboardField.SetValue(handler, menuTournamentLeaderboard);
             handlerField.SetValue(__instance, handler);
             return false;
         }
