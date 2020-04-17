@@ -1,5 +1,6 @@
 using System.Reflection;
 using HarmonyLib;
+using SandBox.GauntletUI.Menu;
 using SandBox.View.Menu;
 using TaleWorlds.CampaignSystem;
 using vartsTradeGuild.behavior;
@@ -12,12 +13,6 @@ namespace vartsTradeGuild.harmony
     {
         private static bool Prefix(MenuContext __instance)
         {
-            if (VartsMenuOpenLeaderboardWorkshopBehavior.IsTryingToOpenLeaderboard == false &&
-                VartsMenuOpenLeaderboardHeroBehavior.IsTryingToOpenLeaderboard == false)
-            {
-                return true;
-            }
-
             var handlerField = typeof(MenuContext).GetField("_handler",
                 BindingFlags.NonPublic | BindingFlags.GetField | BindingFlags.Instance);
             if (handlerField == null)
@@ -33,9 +28,20 @@ namespace vartsTradeGuild.harmony
                 return false;
             }
 
-            var menuTournamentLeaderboard = VartsMenuOpenLeaderboardWorkshopBehavior.IsTryingToOpenLeaderboard
-                ? handler.AddMenuView<VartsLeaderboardWorkshopMenuView>()
-                : handler.AddMenuView<VartsLeaderboardHeroMenuView>();
+            MenuView menuTournamentLeaderboard;
+            if (VartsMenuOpenLeaderboardWorkshopBehavior.IsTryingToOpenLeaderboard)
+            {
+                menuTournamentLeaderboard = handler.AddMenuView<VartsLeaderboardWorkshopMenuView>();
+            }
+            else if (VartsMenuOpenLeaderboardHeroBehavior.IsTryingToOpenLeaderboard)
+            {
+                menuTournamentLeaderboard = handler.AddMenuView<VartsLeaderboardHeroMenuView>();
+            }
+            else
+            {
+                menuTournamentLeaderboard = handler.AddMenuView<GauntletMenuTournamentLeaderboard>();
+            }
+
             menuTournamentLeaderboardField.SetValue(handler, menuTournamentLeaderboard);
             handlerField.SetValue(__instance, handler);
             return false;
