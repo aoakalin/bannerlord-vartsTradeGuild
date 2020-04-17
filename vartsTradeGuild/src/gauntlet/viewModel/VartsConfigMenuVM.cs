@@ -4,7 +4,7 @@ using vartsTradeGuild.localization;
 
 namespace vartsTradeGuild.gauntlet.viewModel
 {
-    internal class VartsMainMenuGauntletViewModel : ViewModel
+    internal class VartsConfigMenuVM : ViewModel
     {
         [DataSourceProperty]
         public string GuildName

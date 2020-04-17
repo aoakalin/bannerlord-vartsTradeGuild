@@ -7,14 +7,14 @@ namespace vartsTradeGuild.gauntlet.screenBase
 {
     public class VartsConfigMenuScreenBase : ScreenBase
     {
-        private VartsMainMenuGauntletViewModel _dataSource;
+        private VartsConfigMenuVM _dataSource;
         private GauntletLayer _gauntletLayer;
         private GauntletMovie _gauntletMovie;
 
         protected override void OnInitialize()
         {
             base.OnInitialize();
-            _dataSource = new VartsMainMenuGauntletViewModel();
+            _dataSource = new VartsConfigMenuVM();
             _gauntletLayer = new GauntletLayer(100)
             {
                 IsFocusLayer = true

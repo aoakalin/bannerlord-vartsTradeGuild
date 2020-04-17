@@ -123,7 +123,7 @@
     <Compile Include="src\gauntlet\viewModel\VartsLeaderboardWorkshopEntryItemVM.cs" />
     <Compile Include="src\gauntlet\viewModel\VartsLeaderboardWorkshopSortControllerVM.cs" />
     <Compile Include="src\gauntlet\viewModel\VartsLeaderboardWorkshopVM.cs" />
-    <Compile Include="src\gauntlet\viewModel\VartsMainMenuGauntletViewModel.cs" />
+    <Compile Include="src\gauntlet\viewModel\VartsConfigMenuVM.cs" />
     <Compile Include="src\harmony\EncyclopediaManagerCreateEncyclopediaPagesPatch.cs" />
     <Compile Include="src\harmony\MenuContextOpenTournamentLeaderboardsPatch.cs" />
     <Compile Include="src\localization\LocalizationManager.cs" />
