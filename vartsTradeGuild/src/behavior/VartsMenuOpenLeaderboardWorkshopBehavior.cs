@@ -9,7 +9,7 @@ namespace vartsTradeGuild.behavior
         public static bool IsTryingToOpenLeaderboard;
 
         public VartsMenuOpenLeaderboardWorkshopBehavior() : base(Main.ModId, "OpenLeaderboardWorkshop",
-            LocalizationManager.MainMenuOpenLeaderboardWorkshopOption.ToString(), GameMenuOption.LeaveType.Trade, false)
+            LocalizationManager.MainMenuOpenLeaderboardWorkshopOption.ToString(), GameMenuOption.LeaveType.Craft, false)
         {
         }
 

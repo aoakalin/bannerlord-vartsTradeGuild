@@ -11,8 +11,6 @@ namespace vartsTradeGuild.dto
         public TextObject Name;
         public TextObject Town;
         public TextObject OwnerName;
-        public TextObject OwnerClan;
-        public TextObject OwnerFaction;
         public int OwnerGold;
         public int Level;
         public int Capital;
@@ -48,9 +46,7 @@ namespace vartsTradeGuild.dto
                             Name = workshop.Name,
                             Town = town.Name,
                             OwnerName = workshop.Owner.Name,
-                            OwnerClan = workshop.Owner.Clan.Name,
                             OwnerGold = workshop.Owner.Gold,
-                            OwnerFaction = workshop.Owner.MapFaction.Name,
                             Level = workshop.Level,
                             Capital = workshop.Capital,
                             Expense = workshop.Expense,
