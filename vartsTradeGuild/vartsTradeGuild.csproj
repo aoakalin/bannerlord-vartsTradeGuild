@@ -107,8 +107,9 @@
     <Compile Include="src\behavior\VartsMenuLeaveBehavior.cs" />
     <Compile Include="src\behavior\VartsMenuOpenConfigBehavior.cs" />
     <Compile Include="src\behavior\VartsMenuOpenEncyclopediaBehavior.cs" />
-    <Compile Include="src\behavior\VartsMenuOpenLeaderboardHeroBehavior.cs" />
+    <Compile Include="src\behavior\VartsMenuOpenLeaderboardCaravanBehavior.cs" />
     <Compile Include="src\behavior\VartsMenuOpenLeaderboardWorkshopBehavior.cs" />
+    <Compile Include="src\dto\CaravanDto.cs" />
     <Compile Include="src\dto\HeroDto.cs" />
     <Compile Include="src\dto\ProductionDto.cs" />
     <Compile Include="src\dto\TownDto.cs" />
@@ -117,9 +118,12 @@
     <Compile Include="src\dto\WorkshopDto.cs" />
     <Compile Include="src\dto\WorkshopTypeDto.cs" />
     <Compile Include="src\encyclopedia\DefaultEncyclopediaVartsPage.cs" />
-    <Compile Include="src\gauntlet\menuView\VartsLeaderboardHeroMenuView.cs" />
+    <Compile Include="src\gauntlet\menuView\VartsLeaderboardCaravanMenuView.cs" />
     <Compile Include="src\gauntlet\menuView\VartsLeaderboardWorkshopMenuView.cs" />
     <Compile Include="src\gauntlet\screenBase\VartsConfigMenuScreenBase.cs" />
+    <Compile Include="src\gauntlet\viewModel\VartsLeaderboardCaravanEntryItemVM.cs" />
+    <Compile Include="src\gauntlet\viewModel\VartsLeaderboardCaravanSortControllerVM.cs" />
+    <Compile Include="src\gauntlet\viewModel\VartsLeaderboardCaravanVM.cs" />
     <Compile Include="src\gauntlet\viewModel\VartsLeaderboardWorkshopEntryItemVM.cs" />
     <Compile Include="src\gauntlet\viewModel\VartsLeaderboardWorkshopSortControllerVM.cs" />
     <Compile Include="src\gauntlet\viewModel\VartsLeaderboardWorkshopVM.cs" />

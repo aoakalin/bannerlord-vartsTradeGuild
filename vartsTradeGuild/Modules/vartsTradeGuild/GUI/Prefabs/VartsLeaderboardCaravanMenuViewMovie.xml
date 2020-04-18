@@ -1,0 +1,371 @@
+<Prefab>
+    <Constants>
+        <Constant Name="CaravanName.MarginLeft" Value="50"/>
+        <Constant Name="CaravanName.SuggestedWidth" Value="250"/>
+        <Constant Name="CaravanTownName.MarginLeft" Value="300"/>
+        <Constant Name="CaravanTownName.SuggestedWidth" Value="200"/>
+        <Constant Name="CaravanLevel.MarginLeft" Value="500"/>
+        <Constant Name="CaravanLevel.SuggestedWidth" Value="100"/>
+        <Constant Name="CaravanCapital.MarginLeft" Value="600"/>
+        <Constant Name="CaravanCapital.SuggestedWidth" Value="250"/>
+        <Constant Name="CaravanExpense.MarginLeft" Value="850"/>
+        <Constant Name="CaravanExpense.SuggestedWidth" Value="100"/>
+        <Constant Name="CaravanIsRunning.MarginLeft" Value="950"/>
+        <Constant Name="CaravanIsRunning.SuggestedWidth" Value="100"/>
+        <Constant Name="CaravanOwnerName.MarginLeft" Value="1050"/>
+        <Constant Name="CaravanOwnerName.SuggestedWidth" Value="350"/>
+        <Constant Name="CaravanOwnerGold.MarginLeft" Value="1400"/>
+        <Constant Name="CaravanOwnerGold.SuggestedWidth" Value="200"/>
+        <Constant Name="CaravanProfitMade.MarginLeft" Value="1600"/>
+        <Constant Name="CaravanProfitMade.SuggestedWidth" Value="200"/>
+        <Constant Name="CaravanRunnedDays.MarginLeft" Value="1800"/>
+        <Constant Name="CaravanRunnedDays.SuggestedWidth" Value="50"/>
+        <Constant Name="CaravanNotRunnedDays.MarginLeft" Value="1850"/>
+        <Constant Name="CaravanNotRunnedDays.SuggestedWidth" Value="50"/>
+    </Constants>
+    <Window>
+        <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+            <Children>
+                <Standard.Background/>
+
+                <Standard.TopPanel Parameter.Title="@MovieTextHeader"/>
+
+                <ListPanel DataSource="{SortController}" WidthSizePolicy="StretchToParent"
+                           HeightSizePolicy="CoverChildren" MarginTop="150">
+                    <Children>
+                        <SortButtonWidget DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed"
+                                          HeightSizePolicy="Fixed" SuggestedWidth="!CaravanName.SuggestedWidth"
+                                          SuggestedHeight="50"
+                                          Command.Click="MovieActionCaravanNameSort"
+                                          IsSelected="@MovieActionCaravanNameIsSelected"
+                                          SortState="@MovieActionCaravanNameSortState"
+                                          SortVisualWidget="TextWidget\TypeSortVisualWidget"
+                                          Brush="GameMenu.Tournament.Sort.Button1" UpdateChildrenStates="true"
+                                          MarginLeft="!CaravanName.MarginLeft">
+                            <Children>
+                                <TextWidget Id="TextWidget" DataSource="{..}" WidthSizePolicy="CoverChildren"
+                                            HeightSizePolicy="CoverChildren" HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" Brush="Kingdom.SortButtons.Text"
+                                            ClipContents="false" Text="@MovieTextCaravanName">
+                                    <Children>
+                                        <Widget Id="TypeSortVisualWidget" WidthSizePolicy="Fixed"
+                                                HeightSizePolicy="Fixed" SuggestedWidth="20" SuggestedHeight="20"
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                PositionXOffset="15" Brush="ArmyManagement.Sort.ArrowBrush"/>
+                                    </Children>
+                                </TextWidget>
+                            </Children>
+                        </SortButtonWidget>
+                        <SortButtonWidget DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed"
+                                          HeightSizePolicy="Fixed" SuggestedWidth="!CaravanTownName.SuggestedWidth"
+                                          SuggestedHeight="50"
+                                          Command.Click="MovieActionCaravanTownNameSort"
+                                          IsSelected="@MovieActionCaravanTownNameIsSelected"
+                                          SortState="@MovieActionCaravanTownNameSortState"
+                                          SortVisualWidget="TextWidget\TypeSortVisualWidget"
+                                          Brush="GameMenu.Tournament.Sort.Button1" UpdateChildrenStates="true">
+                            <Children>
+                                <TextWidget Id="TextWidget" DataSource="{..}" WidthSizePolicy="CoverChildren"
+                                            HeightSizePolicy="CoverChildren" HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" Brush="Kingdom.SortButtons.Text"
+                                            ClipContents="false" Text="@MovieTextCaravanTownName">
+                                    <Children>
+                                        <Widget Id="TypeSortVisualWidget" WidthSizePolicy="Fixed"
+                                                HeightSizePolicy="Fixed" SuggestedWidth="20" SuggestedHeight="20"
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                PositionXOffset="15" Brush="ArmyManagement.Sort.ArrowBrush"/>
+                                    </Children>
+                                </TextWidget>
+                            </Children>
+                        </SortButtonWidget>
+                        <SortButtonWidget DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed"
+                                          HeightSizePolicy="Fixed" SuggestedWidth="!CaravanLevel.SuggestedWidth"
+                                          SuggestedHeight="50"
+                                          Command.Click="MovieActionCaravanLevelSort"
+                                          IsSelected="@MovieActionCaravanLevelIsSelected"
+                                          SortState="@MovieActionCaravanLevelSortState"
+                                          SortVisualWidget="TextWidget\TypeSortVisualWidget"
+                                          Brush="GameMenu.Tournament.Sort.Button1" UpdateChildrenStates="true">
+                            <Children>
+                                <TextWidget Id="TextWidget" DataSource="{..}" WidthSizePolicy="CoverChildren"
+                                            HeightSizePolicy="CoverChildren" HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" Brush="Kingdom.SortButtons.Text"
+                                            ClipContents="false" Text="@MovieTextCaravanLevel">
+                                    <Children>
+                                        <Widget Id="TypeSortVisualWidget" WidthSizePolicy="Fixed"
+                                                HeightSizePolicy="Fixed" SuggestedWidth="20" SuggestedHeight="20"
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                PositionXOffset="15" Brush="ArmyManagement.Sort.ArrowBrush"/>
+                                    </Children>
+                                </TextWidget>
+                            </Children>
+                        </SortButtonWidget>
+                        <SortButtonWidget DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed"
+                                          HeightSizePolicy="Fixed" SuggestedWidth="!CaravanCapital.SuggestedWidth"
+                                          SuggestedHeight="50"
+                                          Command.Click="MovieActionCaravanCapitalSort"
+                                          IsSelected="@MovieActionCaravanCapitalIsSelected"
+                                          SortState="@MovieActionCaravanCapitalSortState"
+                                          SortVisualWidget="TextWidget\TypeSortVisualWidget"
+                                          Brush="GameMenu.Tournament.Sort.Button1" UpdateChildrenStates="true">
+                            <Children>
+                                <TextWidget Id="TextWidget" DataSource="{..}" WidthSizePolicy="CoverChildren"
+                                            HeightSizePolicy="CoverChildren" HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" Brush="Kingdom.SortButtons.Text"
+                                            ClipContents="false" Text="@MovieTextCaravanCapital">
+                                    <Children>
+                                        <Widget Id="TypeSortVisualWidget" WidthSizePolicy="Fixed"
+                                                HeightSizePolicy="Fixed" SuggestedWidth="20" SuggestedHeight="20"
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                PositionXOffset="15" Brush="ArmyManagement.Sort.ArrowBrush"/>
+                                    </Children>
+                                </TextWidget>
+                            </Children>
+                        </SortButtonWidget>
+                        <SortButtonWidget DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed"
+                                          HeightSizePolicy="Fixed" SuggestedWidth="!CaravanExpense.SuggestedWidth"
+                                          SuggestedHeight="50"
+                                          Command.Click="MovieActionCaravanExpenseSort"
+                                          IsSelected="@MovieActionCaravanExpenseIsSelected"
+                                          SortState="@MovieActionCaravanExpenseSortState"
+                                          SortVisualWidget="TextWidget\TypeSortVisualWidget"
+                                          Brush="GameMenu.Tournament.Sort.Button1" UpdateChildrenStates="true">
+                            <Children>
+                                <TextWidget Id="TextWidget" DataSource="{..}" WidthSizePolicy="CoverChildren"
+                                            HeightSizePolicy="CoverChildren" HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" Brush="Kingdom.SortButtons.Text"
+                                            ClipContents="false" Text="@MovieTextCaravanExpense">
+                                    <Children>
+                                        <Widget Id="TypeSortVisualWidget" WidthSizePolicy="Fixed"
+                                                HeightSizePolicy="Fixed" SuggestedWidth="20" SuggestedHeight="20"
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                PositionXOffset="15" Brush="ArmyManagement.Sort.ArrowBrush"/>
+                                    </Children>
+                                </TextWidget>
+                            </Children>
+                        </SortButtonWidget>
+                        <SortButtonWidget DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed"
+                                          HeightSizePolicy="Fixed" SuggestedWidth="!CaravanIsRunning.SuggestedWidth"
+                                          SuggestedHeight="50"
+                                          Command.Click="MovieActionCaravanIsRunningSort"
+                                          IsSelected="@MovieActionCaravanIsRunningIsSelected"
+                                          SortState="@MovieActionCaravanIsRunningSortState"
+                                          SortVisualWidget="TextWidget\TypeSortVisualWidget"
+                                          Brush="GameMenu.Tournament.Sort.Button1" UpdateChildrenStates="true">
+                            <Children>
+                                <TextWidget Id="TextWidget" DataSource="{..}" WidthSizePolicy="CoverChildren"
+                                            HeightSizePolicy="CoverChildren" HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" Brush="Kingdom.SortButtons.Text"
+                                            ClipContents="false" Text="@MovieTextCaravanIsRunning">
+                                    <Children>
+                                        <Widget Id="TypeSortVisualWidget" WidthSizePolicy="Fixed"
+                                                HeightSizePolicy="Fixed" SuggestedWidth="20" SuggestedHeight="20"
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                PositionXOffset="15" Brush="ArmyManagement.Sort.ArrowBrush"/>
+                                    </Children>
+                                </TextWidget>
+                            </Children>
+                        </SortButtonWidget>
+                        <SortButtonWidget DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed"
+                                          HeightSizePolicy="Fixed" SuggestedWidth="!CaravanOwnerName.SuggestedWidth"
+                                          SuggestedHeight="50"
+                                          Command.Click="MovieActionCaravanOwnerNameSort"
+                                          IsSelected="@MovieActionCaravanOwnerNameIsSelected"
+                                          SortState="@MovieActionCaravanOwnerNameSortState"
+                                          SortVisualWidget="TextWidget\TypeSortVisualWidget"
+                                          Brush="GameMenu.Tournament.Sort.Button1" UpdateChildrenStates="true">
+                            <Children>
+                                <TextWidget Id="TextWidget" DataSource="{..}" WidthSizePolicy="CoverChildren"
+                                            HeightSizePolicy="CoverChildren" HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" Brush="Kingdom.SortButtons.Text"
+                                            ClipContents="false" Text="@MovieTextCaravanOwnerName">
+                                    <Children>
+                                        <Widget Id="TypeSortVisualWidget" WidthSizePolicy="Fixed"
+                                                HeightSizePolicy="Fixed" SuggestedWidth="20" SuggestedHeight="20"
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                PositionXOffset="15" Brush="ArmyManagement.Sort.ArrowBrush"/>
+                                    </Children>
+                                </TextWidget>
+                            </Children>
+                        </SortButtonWidget>
+                        <SortButtonWidget DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed"
+                                          HeightSizePolicy="Fixed" SuggestedWidth="!CaravanOwnerGold.SuggestedWidth"
+                                          SuggestedHeight="50"
+                                          Command.Click="MovieActionCaravanOwnerGoldSort"
+                                          IsSelected="@MovieActionCaravanOwnerGoldIsSelected"
+                                          SortState="@MovieActionCaravanOwnerGoldSortState"
+                                          SortVisualWidget="TextWidget\TypeSortVisualWidget"
+                                          Brush="GameMenu.Tournament.Sort.Button1" UpdateChildrenStates="true">
+                            <Children>
+                                <TextWidget Id="TextWidget" DataSource="{..}" WidthSizePolicy="CoverChildren"
+                                            HeightSizePolicy="CoverChildren" HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" Brush="Kingdom.SortButtons.Text"
+                                            ClipContents="false" Text="@MovieTextCaravanOwnerGold">
+                                    <Children>
+                                        <Widget Id="TypeSortVisualWidget" WidthSizePolicy="Fixed"
+                                                HeightSizePolicy="Fixed" SuggestedWidth="20" SuggestedHeight="20"
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                PositionXOffset="15" Brush="ArmyManagement.Sort.ArrowBrush"/>
+                                    </Children>
+                                </TextWidget>
+                            </Children>
+                        </SortButtonWidget>
+                        <SortButtonWidget DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed"
+                                          HeightSizePolicy="Fixed" SuggestedWidth="!CaravanProfitMade.SuggestedWidth"
+                                          SuggestedHeight="50"
+                                          Command.Click="MovieActionCaravanProfitMadeSort"
+                                          IsSelected="@MovieActionCaravanProfitMadeIsSelected"
+                                          SortState="@MovieActionCaravanProfitMadeSortState"
+                                          SortVisualWidget="TextWidget\TypeSortVisualWidget"
+                                          Brush="GameMenu.Tournament.Sort.Button1" UpdateChildrenStates="true">
+                            <Children>
+                                <TextWidget Id="TextWidget" DataSource="{..}" WidthSizePolicy="CoverChildren"
+                                            HeightSizePolicy="CoverChildren" HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" Brush="Kingdom.SortButtons.Text"
+                                            ClipContents="false" Text="@MovieTextCaravanProfitMade">
+                                    <Children>
+                                        <Widget Id="TypeSortVisualWidget" WidthSizePolicy="Fixed"
+                                                HeightSizePolicy="Fixed" SuggestedWidth="20" SuggestedHeight="20"
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                PositionXOffset="15" Brush="ArmyManagement.Sort.ArrowBrush"/>
+                                    </Children>
+                                </TextWidget>
+                            </Children>
+                        </SortButtonWidget>
+                        <SortButtonWidget DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed"
+                                          HeightSizePolicy="Fixed" SuggestedWidth="!CaravanRunnedDays.SuggestedWidth"
+                                          SuggestedHeight="50"
+                                          Command.Click="MovieActionCaravanRunnedDaysSort"
+                                          IsSelected="@MovieActionCaravanRunnedDaysIsSelected"
+                                          SortState="@MovieActionCaravanRunnedDaysSortState"
+                                          SortVisualWidget="TextWidget\TypeSortVisualWidget"
+                                          Brush="GameMenu.Tournament.Sort.Button1" UpdateChildrenStates="true">
+                            <Children>
+                                <TextWidget Id="TextWidget" DataSource="{..}" WidthSizePolicy="CoverChildren"
+                                            HeightSizePolicy="CoverChildren" HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" Brush="Kingdom.SortButtons.Text"
+                                            ClipContents="false" Text="@MovieTextCaravanRunnedDays">
+                                    <Children>
+                                        <Widget Id="TypeSortVisualWidget" WidthSizePolicy="Fixed"
+                                                HeightSizePolicy="Fixed" SuggestedWidth="20" SuggestedHeight="20"
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                PositionXOffset="15" Brush="ArmyManagement.Sort.ArrowBrush"/>
+                                    </Children>
+                                </TextWidget>
+                            </Children>
+                        </SortButtonWidget>
+                        <SortButtonWidget DoNotPassEventsToChildren="true" WidthSizePolicy="Fixed"
+                                          HeightSizePolicy="Fixed" SuggestedWidth="!CaravanNotRunnedDays.SuggestedWidth"
+                                          SuggestedHeight="50"
+                                          Command.Click="MovieActionCaravanNotRunnedDaysSort"
+                                          IsSelected="@MovieActionCaravanNotRunnedDaysIsSelected"
+                                          SortState="@MovieActionCaravanNotRunnedDaysSortState"
+                                          SortVisualWidget="TextWidget\TypeSortVisualWidget"
+                                          Brush="GameMenu.Tournament.Sort.Button1" UpdateChildrenStates="true">
+                            <Children>
+                                <TextWidget Id="TextWidget" DataSource="{..}" WidthSizePolicy="CoverChildren"
+                                            HeightSizePolicy="CoverChildren" HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" Brush="Kingdom.SortButtons.Text"
+                                            ClipContents="false" Text="@MovieTextCaravanNotRunnedDays">
+                                    <Children>
+                                        <Widget Id="TypeSortVisualWidget" WidthSizePolicy="Fixed"
+                                                HeightSizePolicy="Fixed" SuggestedWidth="20" SuggestedHeight="20"
+                                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                PositionXOffset="15" Brush="ArmyManagement.Sort.ArrowBrush"/>
+                                    </Children>
+                                </TextWidget>
+                            </Children>
+                        </SortButtonWidget>
+                    </Children>
+                </ListPanel>
+
+                <ScrollablePanel HeightSizePolicy="StretchToParent" WidthSizePolicy="StretchToParent"
+                                 MarginTop="200" MarginBottom="250"
+                                 MouseScrollAxis="Vertical" AutoHideScrollBars="false"
+                                 InnerPanel="EntriesListRect\EntriesList"
+                                 ClipRect="EntriesListRect"
+                                 VerticalScrollbar="EntriesListRect\EntriesListScrollbar\Scrollbar">
+                    <Children>
+                        <Widget Id="EntriesListRect" WidthSizePolicy="StretchToParent"
+                                HeightSizePolicy="StretchToParent" ClipContents="true">
+                            <Children>
+                                <ListPanel Id="EntriesList" DataSource="{Entries}" WidthSizePolicy="StretchToParent"
+                                           HeightSizePolicy="CoverChildren"
+                                           LayoutImp.LayoutMethod="VerticalBottomToTop">
+                                    <ItemTemplate>
+                                        <Widget Id="TupleParent" WidthSizePolicy="StretchToParent"
+                                                HeightSizePolicy="Fixed" SuggestedHeight="60">
+                                            <Children>
+                                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                                                            SuggestedWidth="!CaravanName.SuggestedWidth"
+                                                            Text="@MovieTextCaravanName"
+                                                            MarginLeft="!CaravanName.MarginLeft"
+                                                            Brush.TextHorizontalAlignment="Center"/>
+                                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                                                            SuggestedWidth="!CaravanTownName.SuggestedWidth"
+                                                            Text="@MovieTextCaravanTownName"
+                                                            MarginLeft="!CaravanTownName.MarginLeft"
+                                                            Brush.TextHorizontalAlignment="Center"/>
+                                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                                                            SuggestedWidth="!CaravanLevel.SuggestedWidth"
+                                                            Text="@MovieTextCaravanLevel"
+                                                            MarginLeft="!CaravanLevel.MarginLeft"
+                                                            Brush.TextHorizontalAlignment="Center"/>
+                                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                                                            SuggestedWidth="!CaravanCapital.SuggestedWidth"
+                                                            Text="@MovieTextCaravanCapital"
+                                                            MarginLeft="!CaravanCapital.MarginLeft"
+                                                            Brush.TextHorizontalAlignment="Center"/>
+                                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                                                            SuggestedWidth="!CaravanExpense.SuggestedWidth"
+                                                            Text="@MovieTextCaravanExpense"
+                                                            MarginLeft="!CaravanExpense.MarginLeft"
+                                                            Brush.TextHorizontalAlignment="Center"/>
+                                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                                                            SuggestedWidth="!CaravanIsRunning.SuggestedWidth"
+                                                            Text="@MovieTextCaravanIsRunning"
+                                                            MarginLeft="!CaravanIsRunning.MarginLeft"
+                                                            Brush.TextHorizontalAlignment="Center"/>
+                                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                                                            SuggestedWidth="!CaravanOwnerName.SuggestedWidth"
+                                                            Text="@MovieTextCaravanOwnerName"
+                                                            MarginLeft="!CaravanOwnerName.MarginLeft"
+                                                            Brush.TextHorizontalAlignment="Center"/>
+                                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                                                            SuggestedWidth="!CaravanOwnerGold.SuggestedWidth"
+                                                            Text="@MovieTextCaravanOwnerGold"
+                                                            MarginLeft="!CaravanOwnerGold.MarginLeft"
+                                                            Brush.TextHorizontalAlignment="Center"/>
+                                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                                                            SuggestedWidth="!CaravanProfitMade.SuggestedWidth"
+                                                            Text="@MovieTextCaravanProfitMade"
+                                                            MarginLeft="!CaravanProfitMade.MarginLeft"
+                                                            Brush.TextHorizontalAlignment="Center"/>
+                                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                                                            SuggestedWidth="!CaravanRunnedDays.SuggestedWidth"
+                                                            Text="@MovieTextCaravanRunnedDays"
+                                                            MarginLeft="!CaravanRunnedDays.MarginLeft"
+                                                            Brush.TextHorizontalAlignment="Center"/>
+                                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent"
+                                                            SuggestedWidth="!CaravanNotRunnedDays.SuggestedWidth"
+                                                            Text="@MovieTextCaravanNotRunnedDays"
+                                                            MarginLeft="!CaravanNotRunnedDays.MarginLeft"
+                                                            Brush.TextHorizontalAlignment="Center"/>
+                                            </Children>
+                                        </Widget>
+                                    </ItemTemplate>
+                                </ListPanel>
+                                <Standard.VerticalScrollbar Id="EntriesListScrollbar" HorizontalAlignment="Right"
+                                                            VerticalAlignment="Bottom"
+                                                            HeightSizePolicy="StretchToParent"/>
+                            </Children>
+                        </Widget>
+                    </Children>
+                </ScrollablePanel>
+
+                <Standard.Button HorizontalAlignment="Center" VerticalAlignment="Bottom" MarginBottom="60"
+                                 Command.Click="MovieActionLeave" Parameter.Text="@MovieTextLeave"/>
+            </Children>
+        </Widget>
+    </Window>
+</Prefab>

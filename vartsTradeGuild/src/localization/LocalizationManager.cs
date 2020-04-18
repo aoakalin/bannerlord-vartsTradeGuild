@@ -73,7 +73,7 @@ namespace vartsTradeGuild.localization
         public static TextObject MainMenuLeaveOption => Translate("MainMenuLeaveOption");
         public static TextObject MainMenuOpenEncyclopediaOption => Translate("MainMenuOpenEncyclopediaOption");
         public static TextObject MainMenuOpenConfigOption => Translate("MainMenuOpenConfigOption");
-        public static TextObject MainMenuOpenLeaderboardHeroOption => Translate("MainMenuOpenLeaderboardHeroOption");
+        public static TextObject MainMenuOpenLeaderboardCaravanOption => Translate("MainMenuOpenLeaderboardHeroOption");
 
         public static TextObject MainMenuOpenLeaderboardWorkshopOption =>
             Translate("MainMenuOpenLeaderboardWorkshopOption");

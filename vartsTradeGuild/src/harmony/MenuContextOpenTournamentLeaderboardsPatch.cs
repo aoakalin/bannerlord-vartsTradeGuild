@@ -33,10 +33,10 @@ namespace vartsTradeGuild.harmony
             {
                 menuTournamentLeaderboard = handler.AddMenuView<VartsLeaderboardWorkshopMenuView>();
             }
-//            else if (VartsMenuOpenLeaderboardHeroBehavior.IsTryingToOpenLeaderboard)
-//            {
-//                menuTournamentLeaderboard = handler.AddMenuView<VartsLeaderboardHeroMenuView>();
-//            }
+            else if (VartsMenuOpenLeaderboardCaravanBehavior.IsTryingToOpenLeaderboard)
+            {
+                menuTournamentLeaderboard = handler.AddMenuView<VartsLeaderboardCaravanMenuView>();
+            }
             else
             {
                 menuTournamentLeaderboard = handler.AddMenuView<GauntletMenuTournamentLeaderboard>();
