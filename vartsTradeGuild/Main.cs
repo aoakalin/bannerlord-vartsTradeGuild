@@ -51,7 +51,7 @@ namespace vartsTradeGuild
                 LocalizationManager.TownMainMenuText.ToString(), ModMenuInitDelegate);
             ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenEncyclopediaBehavior());
             ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenConfigBehavior());
-            ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenLeaderboardCaravanBehavior());
+//            ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenLeaderboardCaravanBehavior());
             ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuOpenLeaderboardWorkshopBehavior());
             ((CampaignGameStarter) gameStarterObject).AddBehavior(new VartsMenuLeaveBehavior());
 
