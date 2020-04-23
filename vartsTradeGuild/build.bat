@@ -38,6 +38,10 @@ cd !modPath!
 powershell -Command "(gc SubModule.xml) -replace 'MOD_ID', '!modId!' | Out-File SubModule.xml"
 powershell -Command "(gc SubModule.xml) -replace 'MOD_NAME', '!modName!' | Out-File SubModule.xml"
 powershell -Command "(gc SubModule.xml) -replace 'MOD_VERSION', '%1%' | Out-File SubModule.xml"
+powershell -Command "Get-Content SubModule.xml | Set-Content -Encoding utf8 SubModule2.xml"
+del /s /q "SubModule.xml" >nul 2>&1
+copy "SubModule2.xml" "SubModule.xml"
+del /s /q "SubModule2.xml" >nul 2>&1
 
 cd !outDir!
 mkdir Modules
