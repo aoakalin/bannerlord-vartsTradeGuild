@@ -45,7 +45,7 @@ namespace vartsTradeGuild
                 return;
             }
 
-            Game.Current.ObjectManager.RegisterNonSerializedType<VartsDto>("VartsDto", "VartsDtoList");
+            Game.Current.ObjectManager.RegisterNonSerializedType<VartsDto>("VartsDto", "VartsDtoList", 1);
 
             ((CampaignGameStarter) gameStarterObject).AddGameMenu(ModId,
                 LocalizationManager.TownMainMenuText.ToString(), ModMenuInitDelegate);
