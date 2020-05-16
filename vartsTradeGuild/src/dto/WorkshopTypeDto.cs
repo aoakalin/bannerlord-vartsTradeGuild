@@ -20,7 +20,7 @@ namespace vartsTradeGuild.dto
 
                 foreach (var workshopType in WorkshopType.All)
                 {
-                    if (workshopType.Name.ToLower().Contains("artisan"))
+                    if (workshopType.Name.ToString().ToLower().Contains("artisan"))
                     {
                         continue;
                     }
@@ -56,14 +56,14 @@ namespace vartsTradeGuild.dto
                     list.Add(workshopTypeDto);
                 }
 
-                list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+                list = list.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
                 return list;
             }
         }
 
         public static IEnumerable<WorkshopTypeDto> GetByInput(TextObject input)
         {
-            switch (input.ToLower().ToString())
+            switch (input.ToString().ToLower().ToString())
             {
                 case "sheep":
                     input = new TextObject("wool");
@@ -92,7 +92,7 @@ namespace vartsTradeGuild.dto
                 {
                     foreach (var productionDtoInput in productionDto.Inputs)
                     {
-                        if (productionDtoInput.ToLower().ToString().Equals(input.ToLower().ToString()))
+                        if (productionDtoInput.ToString().ToLower().ToString().Equals(input.ToString().ToLower().ToString()))
                         {
                             hashSet.Add(workshopTypeDto);
                         }
@@ -101,7 +101,7 @@ namespace vartsTradeGuild.dto
             }
 
             var list = hashSet.ToList();
-            list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+            list = list.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
             return list;
         }
 

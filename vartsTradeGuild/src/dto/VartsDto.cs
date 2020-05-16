@@ -77,7 +77,7 @@ namespace vartsTradeGuild.dto
             }
 
             var list = _all.ToList();
-            list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+            list = list.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
             All = new MBReadOnlyList<VartsDto>(list);
         }
     }

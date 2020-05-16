@@ -1,10 +1,10 @@
 @echo off
-setlocal enableDelayedExpansion
+SETLOCAL EnableDelayedExpansion
 
 set "modId=vartsTradeGuild"
 set "modName=VARTS Trade Guild"
 set "modVersion=%1%"
-set "modulesPath=C:\Program Files (x86)\Steam\steamapps\common\Mount & Blade II Bannerlord\Modules"
+set "modulesPath=D:\Steam\steamapps\common\Mount & Blade II Bannerlord\Modules"
 set "msbuildExePath=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe"
 set "sevenZip=C:\Program Files\7-Zip\7z.exe"
 
@@ -21,18 +21,19 @@ mkdir "!modPath!\bin\Win64_Shipping_Client"
 
 del /s /q "!outDir!\*" >nul 2>&1
 
-"!msbuildExePath!" "%cd%\!modId!.csproj"
+"!msbuildExePath!" "!workDir!\!modId!.csproj"
 
 xcopy "!outDir!\*Harmony*" "!modPath!\bin\Win64_Shipping_Client\"
 xcopy "!outDir!\*!modId!*" "!modPath!\bin\Win64_Shipping_Client\"
 
 del /s /q "!outDir!\*" >nul 2>&1
 
-xcopy "%cd%\Modules\!modId!\GUI" "!modPath!\GUI" /E /I
-xcopy "%cd%\Modules\!modId!\ModuleData" "!modPath!\ModuleData" /E /I
+xcopy "!workDir!\Modules\!modId!\GUI" "!modPath!\GUI" /E /I
+xcopy "!workDir!\Modules\!modId!\ModuleData" "!modPath!\ModuleData" /E /I
 
-xcopy "%cd%\Modules\!modId!\SubModule.xml" "!modPath!\SubModule.xml*"
+xcopy "!workDir!\Modules\!modId!\SubModule.xml" "!modPath!\SubModule.xml*"
 
+cd /d D:\
 cd !modPath!
 
 powershell -Command "(gc SubModule.xml) -replace 'MOD_ID', '!modId!' | Out-File SubModule.xml"
@@ -43,6 +44,7 @@ del /s /q "SubModule.xml" >nul 2>&1
 copy "SubModule2.xml" "SubModule.xml"
 del /s /q "SubModule2.xml" >nul 2>&1
 
+cd /d C:\
 cd !outDir!
 mkdir Modules
 cd Modules

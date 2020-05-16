@@ -59,14 +59,14 @@ namespace vartsTradeGuild.encyclopedia
                 {
                     if (o is VartsDto dto)
                     {
-                        return dto.Type.ToLower().ToString().Equals(textObject.ToLower().ToString());
+                        return dto.Type.ToString().ToLower().ToString().Equals(textObject.ToString().ToLower().ToString());
                     }
 
                     return false;
                 }));
             }
 
-            filtersVartsDtoType = filtersVartsDtoType.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+            filtersVartsDtoType = filtersVartsDtoType.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
             filtersVartsDtoType.Reverse();
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVartsDtoType,
                 LocalizationManager.EncyclopediaVartsDtoFilterSettlementType));
@@ -78,7 +78,7 @@ namespace vartsTradeGuild.encyclopedia
                 {
                     if (o is VartsDto dto)
                     {
-                        return dto.Faction.ToLower().ToString().Equals(textObject.ToLower().ToString());
+                        return dto.Faction.ToString().ToLower().ToString().Equals(textObject.ToString().ToLower().ToString());
                     }
 
                     return false;
@@ -86,7 +86,7 @@ namespace vartsTradeGuild.encyclopedia
             }
 
             filtersFaction =
-                filtersFaction.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+                filtersFaction.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
             filtersFaction.Reverse();
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersFaction,
                 LocalizationManager.Faction));
@@ -100,8 +100,8 @@ namespace vartsTradeGuild.encyclopedia
                     {
                         foreach (var dtoSuggestedWorkshop in dto.SuggestedWorkshops)
                         {
-                            if (dtoSuggestedWorkshop.Name.ToLower().ToString()
-                                .Equals(textObject.ToLower().ToString()))
+                            if (dtoSuggestedWorkshop.Name.ToString().ToLower().ToString()
+                                .Equals(textObject.ToString().ToLower().ToString()))
                             {
                                 return true;
                             }
@@ -113,7 +113,7 @@ namespace vartsTradeGuild.encyclopedia
             }
 
             filtersTownSuggestedWorkshopTypes =
-                filtersTownSuggestedWorkshopTypes.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+                filtersTownSuggestedWorkshopTypes.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
             filtersTownSuggestedWorkshopTypes.Reverse();
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersTownSuggestedWorkshopTypes,
                 LocalizationManager.EncyclopediaVartsDtoFilterWorkshopSuggestion));
@@ -140,7 +140,7 @@ namespace vartsTradeGuild.encyclopedia
                 })
             };
             filtersTownSuggestedWorkshopStrength = filtersTownSuggestedWorkshopStrength
-                .OrderBy(o => o.Name.ToLower().ToString()).ToList();
+                .OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersTownSuggestedWorkshopStrength,
                 LocalizationManager.EncyclopediaVartsDtoFilterSuggestionStrength));
 
@@ -159,7 +159,7 @@ namespace vartsTradeGuild.encyclopedia
             }
 
             filtersVillagePrimaryProduction =
-                filtersVillagePrimaryProduction.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+                filtersVillagePrimaryProduction.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
             filtersVillagePrimaryProduction.Reverse();
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVillagePrimaryProduction,
                 LocalizationManager.EncyclopediaVartsDtoFilterVillageProduction));
@@ -179,7 +179,7 @@ namespace vartsTradeGuild.encyclopedia
             }
 
             filtersVillageTradeBoundTownName =
-                filtersVillageTradeBoundTownName.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+                filtersVillageTradeBoundTownName.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
             filtersVillageTradeBoundTownName.Reverse();
             encyclopediaFilterGroupList.Add(new EncyclopediaFilterGroup(filtersVillageTradeBoundTownName,
                 LocalizationManager.EncyclopediaVartsDtoFilterVillageBoundTown));

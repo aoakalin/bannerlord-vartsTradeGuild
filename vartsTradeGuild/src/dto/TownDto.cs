@@ -47,7 +47,7 @@ namespace vartsTradeGuild.dto
                     }
 
                     var workshopSuggestionList = suggestedWorkshops.ToList();
-                    workshopSuggestionList = workshopSuggestionList.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+                    workshopSuggestionList = workshopSuggestionList.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
                     townDto.SuggestedWorkshops = new MBReadOnlyList<WorkshopTypeDto>(workshopSuggestionList);
 
                     var workshopSuggestionDictionary = new Dictionary<string, int>();
@@ -104,7 +104,7 @@ namespace vartsTradeGuild.dto
                     list.Add(townDto);
                 }
 
-                list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+                list = list.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
                 return list;
             }
         }
@@ -124,7 +124,7 @@ namespace vartsTradeGuild.dto
                 }
 
                 var list = hashSet.ToList();
-                list = list.OrderBy(o => o.ToLower().ToString()).ToList();
+                list = list.OrderBy(o => o.ToString().ToLower().ToString()).ToList();
                 return new MBReadOnlyList<TextObject>(list);
             }
         }
@@ -136,7 +136,7 @@ namespace vartsTradeGuild.dto
             {
                 foreach (var townDtoSuggestedWorkshop in townDto.SuggestedWorkshops)
                 {
-                    if (townDto.Name.ToLower().ToString().Equals(name.ToLower().ToString()))
+                    if (townDto.Name.ToString().ToLower().ToString().Equals(name.ToString().ToLower().ToString()))
                     {
                         hashSet.Add(townDto);
                     }
@@ -144,7 +144,7 @@ namespace vartsTradeGuild.dto
             }
 
             var list = hashSet.ToList();
-            list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+            list = list.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
             return new MBReadOnlyList<TownDto>(list);
         }
 

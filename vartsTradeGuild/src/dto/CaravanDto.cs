@@ -73,7 +73,7 @@ namespace vartsTradeGuild.dto
                     list.Add(caravanDto);
                 }
 
-                list = list.OrderBy(dto => dto.Name.ToLower().ToString()).ToList();
+                list = list.OrderBy(dto => dto.Name.ToString().ToLower().ToString()).ToList();
                 return list;
             }
         }

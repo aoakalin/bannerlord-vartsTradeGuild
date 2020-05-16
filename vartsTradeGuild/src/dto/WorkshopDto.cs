@@ -36,7 +36,7 @@ namespace vartsTradeGuild.dto
 
                     foreach (var workshop in town.Workshops)
                     {
-                        if (workshop.WorkshopType.Name.ToLower().ToString().Equals("artisans"))
+                        if (workshop.WorkshopType.Name.ToString().ToLower().ToString().Equals("artisans"))
                         {
                             continue;
                         }
@@ -59,7 +59,7 @@ namespace vartsTradeGuild.dto
                     }
                 }
 
-                list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+                list = list.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
                 return new MBReadOnlyList<WorkshopDto>(list);
             }
         }

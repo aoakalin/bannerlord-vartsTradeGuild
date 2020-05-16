@@ -45,7 +45,7 @@ namespace vartsTradeGuild.dto
                     list.Add(villageDto);
                 }
 
-                list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+                list = list.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
                 return new MBReadOnlyList<VillageDto>(list);
             }
         }
@@ -62,7 +62,7 @@ namespace vartsTradeGuild.dto
                 }
 
                 var list = hashSet.ToList();
-                list = list.OrderBy(o => o.ToLower().ToString()).ToList();
+                list = list.OrderBy(o => o.ToString().ToLower().ToString()).ToList();
                 return new MBReadOnlyList<TextObject>(list);
             }
         }
@@ -79,7 +79,7 @@ namespace vartsTradeGuild.dto
                 }
 
                 var list = hashSet.ToList();
-                list = list.OrderBy(o => o.ToLower().ToString()).ToList();
+                list = list.OrderBy(o => o.ToString().ToLower().ToString()).ToList();
 
                 return new MBReadOnlyList<TextObject>(list);
             }
@@ -89,7 +89,7 @@ namespace vartsTradeGuild.dto
         {
             foreach (var villageDto in AllVillageDto)
             {
-                if (villageDto.Name.ToLower().ToString().Equals(name.ToLower().ToString()))
+                if (villageDto.Name.ToString().ToLower().ToString().Equals(name.ToString().ToLower().ToString()))
                 {
                     return villageDto;
                 }
@@ -103,14 +103,14 @@ namespace vartsTradeGuild.dto
             var hashSet = new HashSet<VillageDto>();
             foreach (var villageDto in AllVillageDto)
             {
-                if (villageDto.TradeBoundTownName.ToLower().ToString().Equals(name.ToLower().ToString()))
+                if (villageDto.TradeBoundTownName.ToString().ToLower().ToString().Equals(name.ToString().ToLower().ToString()))
                 {
                     hashSet.Add(villageDto);
                 }
             }
 
             var list = hashSet.ToList();
-            list = list.OrderBy(o => o.Name.ToLower().ToString()).ToList();
+            list = list.OrderBy(o => o.Name.ToString().ToLower().ToString()).ToList();
             return new MBReadOnlyList<VillageDto>(list);
         }
 
